@@ -1,5 +1,6 @@
 import { React, useState, useEffect, useRef } from "react";
 import Menu from './canvas_menu';
+import "./canvas.css"
 
 function CanvasComponent() {
     const canvasElement = useRef(null);
@@ -48,7 +49,7 @@ function CanvasComponent() {
     return (
         <div className="canvas-element">
             <Menu className="canvas-menu" setLineColor={setLineColor} setDrawSize={setDrawSize}/>
-            <canvas 
+            <canvas className="draw-area"
             onMouseDown={beginDrawing} 
             onMouseUp={stopDrawing} 
             onMouseMove={draw}

@@ -1,0 +1,9 @@
+.draw-area {
+    border:1px solid black;
+}
+
+.canvas-menu {
+    background-color: grey;
+    width: 1000px;
+    border: 1px solid black;
+}
