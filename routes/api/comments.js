@@ -4,7 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const validateCommentInput = require('../../validation/comment');
-const Comment = require('../models/Comment')
+const Comment = require('../../models/Comment')
 const mongoose = require('mongoose');
 
 
