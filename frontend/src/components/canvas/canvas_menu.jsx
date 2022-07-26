@@ -3,7 +3,7 @@ import React from "react";
 import "./canvas.css"
 
 
-const Menu = ({setLineColor, setDrawSize, clearCanvas }) => {
+const Menu = ({setLineColor, setDrawSize, clearCanvas, handleSubmit }) => {
     return (
         <div className="canvas-menu">
             
@@ -27,6 +27,10 @@ const Menu = ({setLineColor, setDrawSize, clearCanvas }) => {
             <label> Pen Size 
                 <input type="range" min={3} max={20} defaultValue={10} onChange={(e) => {setDrawSize(e.target.value)}} />
             </label>
+
+            <button className="canvas-submit" onClick={()=> handleSubmit()}>
+                submit picture
+            </button>
         </div>
     )
 }
