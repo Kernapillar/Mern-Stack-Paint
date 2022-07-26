@@ -65,7 +65,7 @@ function CanvasComponent() {
         <div className="canvas-element">
             <Menu className="canvas-menu" setLineColor={setLineColor} setDrawSize={setDrawSize} clearCanvas={clearCanvas}
             handleSubmit={handleSubmit}/>
-            <canvas className="draw-area"
+            <canvas className="draw-area" id="canvas-page-element"
             onMouseDown={start} 
             onMouseUp={stop} 
             onMouseMove={draw}

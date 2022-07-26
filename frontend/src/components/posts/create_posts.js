@@ -1,5 +1,6 @@
 import React from 'react';
 import PostSingle from './posts_single';
+import CanvasComponent from '../canvas/canvas';
 
 class CreatePost extends React.Component {
   constructor(props) {
@@ -9,8 +10,14 @@ class CreatePost extends React.Component {
       text: "",
       newPost: ""
     }
-
+  
+    this.canvas = null
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.canvas = document.getElementById("canvas-page-element")
+    // console.log("canvas png", canvas.toDataURL())
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,6 +33,8 @@ class CreatePost extends React.Component {
 
     this.props.composePost(post);
     this.setState({ text: '' })
+    console.log("canvas png", this.canvas.toDataURL())
+
   }
 
   update() {
@@ -39,6 +48,7 @@ class CreatePost extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
+            <CanvasComponent  />
             <input type="textarea"
               value={this.state.text}
               onChange={this.update()}
