@@ -1,10 +1,15 @@
+body {
+    background-color: #FDFCDC;
+    height: 100%;
+}
+
 .page-container {
     /* background-color: green; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 40rem;
-    width: 75%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -25,18 +30,19 @@
     margin-top: 20%;
 }
 
-label {
+.form-container > label {
     font-size: 18px;
+    margin-top: 10px;
 }
 
 .input-field {
     font-size: 20px;
     background-color: #FDFCDC;
-    padding: auto;
     display: flex;
     height: 2rem;
     width: 20rem;
     border-radius: 0.25rem;
+    
 
 }
 
@@ -44,4 +50,6 @@ label {
     background-color: #FED9B7;
     padding: 0.5rem 2rem;
     border-radius: 0.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
