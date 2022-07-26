@@ -19,11 +19,11 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Comments page
+  // Once the user has been authenticated, redirect to the posts page
   // Can alter to main page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/comments');
+      this.props.history.push('/posts');
       // this.props.history.push('/');
     }
 
@@ -65,26 +65,22 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="page-container">
+      <div>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-container">
-            <h1>Login</h1>
-            <br />
-            <label> Email </label>
+          <div>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
-              placeholder="Email" className='input-field'
+              placeholder="Email"
             />
             <br />
-            <label> Password </label>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              placeholder="Password"className='input-field'
+              placeholder="Password"
             />
             <br />
-            <input type="submit" value="Submit" className="submit-button"/>
+            <input type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>

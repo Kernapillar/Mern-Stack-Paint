@@ -3,34 +3,34 @@ const app = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users')
-const comments = require('./routes/api/comments')
+const posts = require('./routes/api/posts')
 const User = require('./models/User')
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const passport = require('passport');
 
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch(err => console.log(err));
+.connect(db, { useNewUrlParser: true })
+.then(() => console.log("Connected to MongoDB successfully"))
+.catch(err => console.log(err));
 
-  app.use(bodyParser.urlencoded({
-    extended: false
-  }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
-  app.use(bodyParser.json());
+app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-const user = new User({
-  handle: "user1",
-  email: "user@email.com",
-  password: "123456"
-})
-user.save()
-res.send("Hello World you sullen scallywag");
-});
+app.get("/", (req, res) => { res.send("Hello World you sullen scallywag"); })
+
+
+app.use(passport.initialize()); // per reading
+  require('./config/passport')(passport);
+
+  
+
 
 app.use("/api/users", users);
-app.use("/api/comments", comments);
+app.use("/api/posts", posts);
 
 
 const port = process.env.PORT || 5000;
