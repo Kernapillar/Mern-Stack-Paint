@@ -1,6 +1,7 @@
 import { React, useState, useEffect, useRef } from "react";
 import Menu from './canvas_menu';
 import "./canvas.css"
+// import * as S3 from 'aws-sdk/clients/s3';
 
 function CanvasComponent() {
     const canvasElement = useRef(null);
@@ -56,7 +57,7 @@ function CanvasComponent() {
     };
 
     const handleSubmit = () => {
-        console.log(canvasElement.current.toDataURL('image/svg'))
+        // console.log(S3.util.base64.decode(canvasElement.current.toDataURL('image/jpeg')))
     }
 
 
