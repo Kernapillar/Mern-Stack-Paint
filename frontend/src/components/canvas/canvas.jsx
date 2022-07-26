@@ -56,7 +56,7 @@ function CanvasComponent() {
     };
 
     const handleSubmit = () => {
-        console.log(canvasElement.current.toDataURL())
+        console.log(canvasElement.current.toDataURL('image/svg'))
     }
 
 
