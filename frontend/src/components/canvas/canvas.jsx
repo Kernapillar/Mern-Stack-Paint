@@ -55,9 +55,15 @@ function CanvasComponent() {
         canvasContext.current.stroke();
     };
 
+    const handleSubmit = () => {
+        console.log(canvasElement.current.toDataURL())
+    }
+
+
     return (
         <div className="canvas-element">
-            <Menu className="canvas-menu" setLineColor={setLineColor} setDrawSize={setDrawSize} clearCanvas={clearCanvas}/>
+            <Menu className="canvas-menu" setLineColor={setLineColor} setDrawSize={setDrawSize} clearCanvas={clearCanvas}
+            handleSubmit={handleSubmit}/>
             <canvas className="draw-area"
             onMouseDown={start} 
             onMouseUp={stop} 
