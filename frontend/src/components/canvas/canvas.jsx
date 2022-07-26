@@ -43,7 +43,7 @@ function CanvasComponent() {
         canvasContext.current.closePath();
         setIsDrawing(false);
     }
-
+ 
     const draw = (e) => {
         if (!isDrawing) {
             return;
