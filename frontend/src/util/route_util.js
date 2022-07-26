@@ -13,11 +13,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 
 
       // redirect to /posts?
-<<<<<<< HEAD
-      <Redirect to="/comments" />
-=======
       <Redirect to="/posts" />
->>>>>>> 641e4d5 (main update branch with post auth debugged)
     )
   )} />
 );
