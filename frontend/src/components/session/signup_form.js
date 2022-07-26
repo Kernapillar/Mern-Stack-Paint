@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import "./session.css"
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -58,35 +59,40 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
+      <div className="page-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
+          <div className="form-container">
+            <h1>Sign Up</h1>
             <br />
+            <label> Email </label>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
-              placeholder="Email"
+              placeholder="Email" className='input-field'
             />
             <br />
+            <label> Username </label>
             <input type="text"
               value={this.state.handle}
               onChange={this.update('handle')}
-              placeholder="Handle"
+              placeholder="Handle" className='input-field'
             />
             <br />
+            <label> Password </label>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              placeholder="Password"
+              placeholder="Password" className='input-field'
             />
             <br />
+            <label> Confirm Password </label>
             <input type="password"
               value={this.state.password2}
               onChange={this.update('password2')}
-              placeholder="Confirm Password"
+              placeholder="Confirm Password" className='input-field'
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="submit-button"/>
             {this.renderErrors()}
           </div>
         </form>
