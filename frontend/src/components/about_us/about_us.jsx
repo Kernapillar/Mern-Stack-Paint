@@ -22,11 +22,11 @@ const AboutUs = () => {
                 <ul className="team-members">
                     <li>Alex Kern (Team Lead, Flex)
                         <div className='icons'>
-                            <a href="https://github.com/vuongcindy/" target=">blank">
-                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Cindy's Github" />
+                            <a href="https://github.com/Kernapillar" target=">blank">
+                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Alex's Github" />
                             </a>
                             <a href="https://www.linkedin.com/in/vuongcindy/" target=">blank">
-                                <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Cindy's Linkedin" />
+                                <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Alex's Linkedin" />
                             </a>
                         </div>
                     </li>
@@ -42,21 +42,21 @@ const AboutUs = () => {
                     </li>
                     <li>Danny Wallace (Backend)
                         <div className='icons'>
-                            <a href="https://github.com/vuongcindy/" target=">blank">
-                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Cindy's Github" />
+                            <a href="https://github.com/dkwal" target=">blank">
+                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Danny's Github" />
                             </a>
                             <a href="https://www.linkedin.com/in/vuongcindy/" target=">blank">
-                                <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Cindy's Linkedin" />
+                                <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Danny's Linkedin" />
                             </a>
                         </div>
                     </li>
                     <li>Peter Romo (Backend)
                         <div className='icons'>
-                            <a href="https://github.com/vuongcindy/" target=">blank">
-                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Cindy's Github" />
+                            <a href="https://github.com/AlchemR" target=">blank">
+                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Peter's Github" />
                             </a>
                             <a href="https://www.linkedin.com/in/vuongcindy/" target=">blank">
-                                <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Cindy's Linkedin" />
+                                <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Peter's Linkedin" />
                             </a>
                         </div>
                     </li>
