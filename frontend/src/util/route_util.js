@@ -13,7 +13,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 
 
       // redirect to /posts?
-      <Redirect to="/posts" />
+      <Redirect to="/" />
     )
   )} />
 );
