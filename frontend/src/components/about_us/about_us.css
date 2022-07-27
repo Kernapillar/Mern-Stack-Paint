@@ -12,6 +12,7 @@
     height: 275px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .description > h1 {
@@ -29,6 +30,8 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     /* display: flex; */
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .team > h1 {
@@ -43,7 +46,7 @@
     /* background-color: green; */
     font-size: 24px;
     /* margin-left: 15px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     /* list-style-type: circle; */
