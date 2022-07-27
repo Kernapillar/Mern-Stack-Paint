@@ -10,7 +10,7 @@
 .post-list {
     /* background-color: purple; */
     display: grid;
-    grid-template-columns: repeat(3, 450px);
+    grid-template-columns: repeat(auto-fit, 450px);
     /* grid-template-columns: repeat(3, minmax(450px, 1fr)); */
     grid-gap: 1rem;
     /* border-radius: 1rem; */
