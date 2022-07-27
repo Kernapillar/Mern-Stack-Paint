@@ -23,11 +23,15 @@ const LoginDropdown = (props) => {
 
         <div className="dropdown-container" ref={container}>
             <button className="dropdown-button" onClick={() => setOpen(!open)}>
-            <span className="material-symbols-outlined">menu</span>  </button>
+                <div className="dd-button">
+                    <span className="material-symbols-outlined">menu</span>  
+                </div>
+            </button>
 
             {open ? (
                 <div className="dropdown-wrapper">
                     <ul>
+                        <li className="dropdown-item"> <Link to={'/about'}> <p className="logout-button">About</p></Link></li>
                         <li className="dropdown-item"> <Link to={'/login'}> <p className="logout-button">Login</p></Link> </li>
                         <li className="dropdown-item"> <Link to={'/signup'}><p className="logout-button">Sign Up</p></Link> </li>
 

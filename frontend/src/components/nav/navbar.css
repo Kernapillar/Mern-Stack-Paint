@@ -55,12 +55,30 @@ body {
   background-color: #F07167;
 }
 
+/* search bar section */
 
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+
+.search-bar {
+  width: 250px;
+  
+}
 
 /* dropdown section */
 
 .dropdown-container {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .dropdown-wrapper {
   background-color:rgb(40, 40, 40);
@@ -69,7 +87,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   position: absolute;
-  top: 35px;
+  top: 45px;
   min-width: 150px;
   right: 0px;
 }
@@ -105,4 +123,10 @@ justify-content: right;
   border-radius: 5px;
   width: max-content;
 
+}
+.dd-button {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 4px;
 }
