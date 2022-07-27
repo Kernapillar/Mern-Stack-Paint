@@ -25,12 +25,10 @@ const Menu = ({setLineColor, setDrawSize, clearCanvas, handleSubmit }) => {
                 />
             </label>
             </div>
-
-
             <label> Pen Size &nbsp;
                 <input type="range" min={3} max={20} defaultValue={10} onChange={(e) => {setDrawSize(e.target.value)}} className="pen-size-scroll"/>
             </label>
-            <button onClick={() => clearCanvas()} className="canvas-button">clear all</button>
+            <button onClick={(e) => {e.preventDefault(); clearCanvas()}} className="canvas-button">clear all</button>
 
         </div>
     )

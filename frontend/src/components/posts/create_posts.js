@@ -35,13 +35,13 @@ class CreatePost extends React.Component {
       tag: this.state.tag
     };
     
-    this.props.composePost(post);
+    this.props.composePost(post).then(() =>this.props.history.push("/profile"));
     this.setState({ 
       text: '',
       tag: ''
     });
 
-    this.props.history.push("/profile")
+    
   }
 
   update(field) {
