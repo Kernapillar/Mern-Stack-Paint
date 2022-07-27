@@ -28,7 +28,7 @@ const Menu = ({setLineColor, setDrawSize, clearCanvas, handleSubmit }) => {
                 <input type="range" min={3} max={20} defaultValue={10} onChange={(e) => {setDrawSize(e.target.value)}} />
             </label>
 
-            <button className="canvas-submit" onClick={()=> handleSubmit()}>
+            <button className="canvas-submit" onClick={(e)=> handleSubmit(e)}>
                 submit picture
             </button>
         </div>

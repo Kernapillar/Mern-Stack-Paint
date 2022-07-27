@@ -56,8 +56,9 @@ function CanvasComponent() {
         canvasContext.current.stroke();
     };
 
-    const handleSubmit = () => {
-        // console.log(S3.util.base64.decode(canvasElement.current.toDataURL('image/jpeg')))
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(canvasElement.current.toDataURL('image/svg'))
     }
 
 

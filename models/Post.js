@@ -10,6 +10,9 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
+  imageUrl: {
+    type:  String 
+  },
   //Add Image in separate model file
   // image: {
   //   type: ???? ,

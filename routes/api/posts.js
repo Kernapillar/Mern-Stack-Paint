@@ -49,9 +49,10 @@ router.post('/',
     }
 
     const newPost = new Post({
-      console: console.log(req.user),
+      console1: console.log("req",req),
       user: req.user, 
-      text: req.body.text
+      text: req.body.text,
+      imageUrl: req.body.imageUrl
     });
 
     newPost.save()
