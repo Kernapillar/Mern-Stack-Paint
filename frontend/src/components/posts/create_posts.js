@@ -70,7 +70,7 @@ class CreatePost extends React.Component {
 
           <div>
 
-            <CanvasComponent  />
+        
 
 
           </div>
