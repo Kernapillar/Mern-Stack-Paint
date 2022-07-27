@@ -102,3 +102,7 @@ body {
   border-radius: 4px;
   size: 15px;
 }
+
+.header-logo {
+  width: 150px;
+}

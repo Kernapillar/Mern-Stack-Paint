@@ -64,7 +64,8 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <h1 className="app-name">M(ern) S(tack) Paint</h1>
+        {/* <h1 className="app-name">M(ern) S(tack) Paint</h1> */}
+        <img className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
         <br />
         {this.getLinks()}
       </div>
