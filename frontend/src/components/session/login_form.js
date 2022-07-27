@@ -20,10 +20,9 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the posts page
-  // Can alter to main page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/posts');
+      this.props.history.push('/');
       // this.props.history.push('/');
     }
 

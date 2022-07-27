@@ -19,17 +19,17 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
+        <div className="link-list">
           {/* link to /posts and /new_post? */}
-          <Link to={'/posts'}>All Posts</Link>
-          <Link to={'/profile'}>Profile</Link>
-          <Link to={'/posts/new'}>Write a Post</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+          <Link to={'/'} className="link">All Posts</Link>
+          <Link to={'/profile'} className="link">Profile</Link>
+          <Link to={'/posts/new'} className="link">Create a Post</Link>
+          <button onClick={this.logoutUser}className="logout-button">Logout</button>
         </div>
       );
     } else {
       return (
-        <div className='nav-bar'>
+        <div className='link-list'>
           <Link to={'/signup'}>Signup</Link>
           <br />
           <Link to={'/login'}>Login</Link>
@@ -40,8 +40,9 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Draw-ink</h1>
+      <div className="nav-bar">
+        <h1 className="app-name">Draw-ink</h1>
+        <br />
         {this.getLinks()}
       </div>
     );

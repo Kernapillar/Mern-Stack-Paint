@@ -49,10 +49,11 @@ router.post('/',
     }
 
     const newPost = new Post({
-      console1: console.log("req",req),
+      console: console.log(req),
+      //parent ID, child posts
       user: req.user, 
       text: req.body.text,
-      imageUrl: req.body.imageUrl
+      tag: req.body.tag
     });
 
     newPost.save()

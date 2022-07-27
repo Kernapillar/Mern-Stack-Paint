@@ -9,8 +9,13 @@ class CreatePost extends React.Component {
 
     this.state = {
       text: "",
+<<<<<<< HEAD
       newPost: "",
       imageUrl: ""
+=======
+      tag: '',
+      newPost: ""
+>>>>>>> origin/main
     }
   
     this.canvas = null
@@ -30,18 +35,20 @@ class CreatePost extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let post = {
-      text: this.state.text
+      text: this.state.text,
+      tag: this.state.tag
     };
     
     this.props.composePost(post);
-    this.setState({ text: '' })
-    console.log("canvas png", this.canvas.toDataURL())
-
+    this.setState({ 
+      text: '',
+      tag: ''
+    });
   }
 
-  update(feild) {
+  update(field) {
     return e => this.setState({
-      [feild]: e.currentTarget.value
+      [field]: e.currentTarget.value
     });
   }
 
@@ -57,14 +64,17 @@ class CreatePost extends React.Component {
             <CanvasComponent  />
             <input type="textarea"
               value={this.state.text}
-              onChange={this.update('text')}
+              onChange={this.update("text")}
               placeholder="Write your Comment..."
             />
-            <input type="text"
-              value={this.state.imageUrl}
-              onChange={this.update('imageUrl')}
-              placeholder="ImageUrl..."
-            />
+            <select onChange={this.update("tag")}>
+              <option value={1}>tag1</option>
+              <option value={2}>tag2</option>
+              <option value={3}>tag3</option>
+              {/* <option value={this.state.tag}>tag1</option>
+              <option value={this.state.tag}>tag2</option>
+              <option value={this.state.tag}>tag3</option> */}
+            </select>
             <input type="submit" value="Submit" />
           </div>
 
