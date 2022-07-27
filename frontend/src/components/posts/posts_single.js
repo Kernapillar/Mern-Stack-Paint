@@ -1,14 +1,14 @@
 import React from 'react';
+import './posts_single.css'
 
 class PostSingle extends React.Component {
   render() {
     return (
-      <div>
+      <div className="post-container">
         <div className="tags">{this.props.tag}</div>
-        <h3>{this.props.text}</h3>
+        <h3 className="post">{this.props.text}</h3>
         {console.log(this.props)}
-        
-       <button>reply to this post</button>
+       <button className="post-reply">reply to this post</button>
         {/* <h3>{this.props.imageurl}</h3> */}
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import PostSingle from '../posts/posts_single';
+import './profile.css'
 
 class Profile extends React.Component {
   constructor(props) {
@@ -24,8 +25,13 @@ class Profile extends React.Component {
       return (<div>This user has no Posts</div>)
     } else {
       return (
-        <div>
-          <h2>All of This User's Posts</h2>
+        <div className='profile-container'>
+          <div className="user-section">
+            <h2>Username</h2>
+            <h1>A</h1>
+          </div>
+
+          
           {this.state.posts.map(post => (
             <PostSingle key={post._id} post={post} text={post.text} tag={post.tag} />
           ))}
