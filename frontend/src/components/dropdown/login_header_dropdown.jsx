@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const HeaderDropdown = (props) => {
+const LoginDropdown = (props) => {
     const [open, setOpen] = useState(false);
     const container = useRef(null)
 
@@ -28,9 +28,9 @@ const HeaderDropdown = (props) => {
             {open ? (
                 <div className="dropdown-wrapper">
                     <ul>
-                        <li className="dropdown-item"> <Link to={'/'}> <p className="logout-button">Home</p></Link></li>
-                        <li className="dropdown-item"> <Link to={'/profile'} > <p className="logout-button">Profile</p></Link></li>
-                        <li className="dropdown-item"> <p className="logout-button" onClick={props.logout}>Log Out</p> </li>
+                        <li className="dropdown-item"> <Link to={'/login'}> <p className="logout-button">Login</p></Link> </li>
+                        <li className="dropdown-item"> <Link to={'/signup'}><p className="logout-button">Sign Up</p></Link> </li>
+
 
                     </ul>
                 </div>
@@ -44,4 +44,4 @@ const HeaderDropdown = (props) => {
 
 }
 
-export default HeaderDropdown;
+export default LoginDropdown;

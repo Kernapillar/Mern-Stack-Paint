@@ -9,13 +9,8 @@ class CreatePost extends React.Component {
 
     this.state = {
       text: "",
-<<<<<<< HEAD
-      newPost: "",
-      imageUrl: ""
-=======
       tag: '',
       newPost: ""
->>>>>>> origin/main
     }
   
     this.canvas = null

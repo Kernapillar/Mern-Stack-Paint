@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import HeaderDropDown from '../dropdown/header_dropdown'
+import LoginDropdown from '../dropdown/login_header_dropdown';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class NavBar extends React.Component {
           <Link to={'/'} className="link">All Posts</Link>
           <Link to={'/profile'} className="link">Profile</Link>
           <Link to={'/posts/new'} className="link">Create a Post</Link>
-          <button onClick={this.logoutUser}className="logout-button">Logout</button>
+          {/* <button onClick={this.logoutUser}className="logout-button">Logout</button> */}
+          <HeaderDropDown logout={this.logoutUser}/>
         </div>
       );
     } else {
@@ -33,6 +36,7 @@ class NavBar extends React.Component {
           <Link to={'/signup'}>Signup</Link>
           <br />
           <Link to={'/login'}>Login</Link>
+          <LoginDropdown />
         </div>
       );
     }
@@ -41,7 +45,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <h1 className="app-name">Draw-ink</h1>
+        <h1 className="app-name">M(ern) S(tack) Paint</h1>
         <br />
         {this.getLinks()}
       </div>
