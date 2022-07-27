@@ -1,0 +1,76 @@
+.about-container {
+    padding-top: 150px;
+    /* background-color: cornflowerblue; */
+    /* height: 0px; */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description {
+    background-color: #0081A7;
+    height: 275px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.description > h1 {
+    font-size: 32px;
+    padding-bottom: 10px;
+}
+
+.description span {
+    font-size: 24px;
+}
+
+.team {
+    background-color: #FED9B7;
+    height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    /* display: flex; */
+}
+
+.team > h1 {
+    font-size: 32px;
+    padding-bottom: 10px;
+    /* background-color: purple; */
+    /* position: fixed; */
+    
+}
+
+.team li {
+    /* background-color: green; */
+    font-size: 24px;
+    margin-left: 15px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    /* list-style-type: circle; */
+    padding: 10px;
+}
+
+ul.team-members {
+    display: flex;
+    /* background-color: green; */
+    height: 150px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+} 
+
+#github {
+    height: 100px;
+    width: 100px;
+    /* background-color: purple; */
+}
+
+#linkedin {
+    height: 100px;
+    width: 100px;
+    /* background-color: orange; */
+}

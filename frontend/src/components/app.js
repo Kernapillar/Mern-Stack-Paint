@@ -10,7 +10,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import PostsContainer from './posts/posts_container';
 import CreatePostContainer from './posts/create_posts_container';
-import ProfileContainer from "./profile/profile_container"
+import ProfileContainer from "./profile/profile_container";
+import AboutUs from "./about_us/about_us";
 
 const App = () => (
   <div>
@@ -21,7 +22,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/posts/new" component={CreatePostContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-
+      <Route exact path="/about" component={AboutUs} />
     </Switch>
   </div>
 );
