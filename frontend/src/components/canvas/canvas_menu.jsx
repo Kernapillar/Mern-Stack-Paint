@@ -10,7 +10,7 @@ const Menu = ({setLineColor, setDrawSize, clearCanvas, handleSubmit }) => {
     return (
         <div className="canvas-menu">
             
-            <div className="color-pallette">
+            <div className="color-palette">
                 <button  className="color-button red" onClick={(e) => {e.preventDefault(); setLineColor("red")}}></button>
                 <button  className="color-button orange" onClick={(e) => {e.preventDefault(); setLineColor("orange")}}></button>
                 <button  className="color-button yellow" onClick={(e) => {e.preventDefault(); setLineColor("yellow")}}></button>
@@ -18,22 +18,20 @@ const Menu = ({setLineColor, setDrawSize, clearCanvas, handleSubmit }) => {
                 <button  className="color-button blue" onClick={(e) => {e.preventDefault(); setLineColor("blue")}}></button>
                 <button  className="color-button indigo" onClick={(e) => {e.preventDefault(); setLineColor("indigo")}}></button>
                 <button  className="color-button violet" onClick={(e) => {e.preventDefault(); setLineColor("violet")}}></button>
-                <label> Color 
+                <label> Color &nbsp;
                 <input type="color" onChange={(e) => {
                     setLineColor(e.target.value);
-                }} 
+                }} className="color-changer"
                 />
             </label>
             </div>
-            <button onClick={() => clearCanvas()}>clear all</button>
 
-            <label> Pen Size 
-                <input type="range" min={3} max={20} defaultValue={10} onChange={(e) => {setDrawSize(e.target.value)}} />
+
+            <label> Pen Size &nbsp;
+                <input type="range" min={3} max={20} defaultValue={10} onChange={(e) => {setDrawSize(e.target.value)}} className="pen-size-scroll"/>
             </label>
+            <button onClick={() => clearCanvas()} className="canvas-button">clear all</button>
 
-            <button className="canvas-submit" onClick={(e)=> handleSubmit(e)}>
-                submit picture
-            </button>
         </div>
     )
 }

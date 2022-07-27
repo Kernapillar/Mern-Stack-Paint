@@ -22,7 +22,7 @@
     border: 1px solid #F07167;
 }
 
-.post-reply {
+.post-reply-button {
     background-color: #FED9B7;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-.post-reply:hover {
+.post-reply-button:hover {
     background-color: #F07167;
 }
 
