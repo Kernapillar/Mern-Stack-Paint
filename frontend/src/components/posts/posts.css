@@ -5,6 +5,8 @@
 }
 
 .post-list {
+    padding-top: 100px;
+    /* background-color: purple; */
     display: grid;
     grid-template-columns: repeat(auto-fit, 450px);
     grid-gap: 1rem;
