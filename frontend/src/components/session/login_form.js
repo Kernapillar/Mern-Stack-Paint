@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+
   }
 
   // Once the user has been authenticated, redirect to the posts page
@@ -62,6 +63,9 @@ class LoginForm extends React.Component {
     );
   }
 
+  // View password or hide password based on toggle
+
+
   render() {
     return (
       <div className="page-container">
@@ -75,12 +79,14 @@ class LoginForm extends React.Component {
               placeholder="Email"
             className="input-field"/>
             <br />
+
             <label>Password</label>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             className="input-field"/>
+            
             <br />
             <input type="submit" value="Submit" className="submit-button"/>
             {this.renderErrors()}

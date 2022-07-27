@@ -40,6 +40,8 @@ class CreatePost extends React.Component {
       text: '',
       tag: ''
     });
+
+    this.props.history.push("/profile")
   }
 
   update(field) {
