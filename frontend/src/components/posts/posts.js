@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PostSingle from './posts_single';
 import "./posts.css"
-import CanvasComponent from '../canvas/canvas';
 
 //Do this one last
 
@@ -27,7 +26,6 @@ class Posts extends React.Component {
     if (this.state.posts.length === 0) {
       return (
         <div className="posts-container">
-          {/* <CanvasComponent /> */}
           {/* There are no Posts */}
           <ul className="post-list">
             <li className="post-placeholder">1</li>
