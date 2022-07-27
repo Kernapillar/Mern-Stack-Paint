@@ -7,6 +7,7 @@ class CreatePost extends React.Component {
 
     this.state = {
       text: "",
+      tag: '',
       newPost: ""
     }
 
@@ -21,16 +22,20 @@ class CreatePost extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let post = {
-      text: this.state.text
+      text: this.state.text,
+      tag: this.state.tag
     };
 
     this.props.composePost(post);
-    this.setState({ text: '' })
+    this.setState({ 
+      text: '',
+      tag: ''
+    });
   }
 
-  update() {
+  update(field) {
     return e => this.setState({
-      text: e.currentTarget.value
+      [field]: e.currentTarget.value
     });
   }
 
@@ -41,9 +46,17 @@ class CreatePost extends React.Component {
           <div>
             <input type="textarea"
               value={this.state.text}
-              onChange={this.update()}
+              onChange={this.update("text")}
               placeholder="Write your Comment..."
             />
+            <select onChange={this.update("tag")}>
+              <option value={1}>tag1</option>
+              <option value={2}>tag2</option>
+              <option value={3}>tag3</option>
+              {/* <option value={this.state.tag}>tag1</option>
+              <option value={this.state.tag}>tag2</option>
+              <option value={this.state.tag}>tag3</option> */}
+            </select>
             <input type="submit" value="Submit" />
           </div>
         </form>

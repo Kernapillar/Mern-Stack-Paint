@@ -45,7 +45,7 @@ class Posts extends React.Component {
         <div className="posts-container">
           <h2>All Posts</h2>
           {this.state.posts.map(post => (
-            <PostSingle key={post._id} text={post.text} />
+            <PostSingle key={post._id} text={post.text} tag={post.tag} />
           ))}
         </div>
       );
