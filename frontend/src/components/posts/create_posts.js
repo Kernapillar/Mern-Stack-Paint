@@ -10,7 +10,8 @@ class CreatePost extends React.Component {
     this.state = {
       text: "",
       tag: '',
-      newPost: ""
+      // newPost: "",
+      parent: this.props.parent ? this.props.parent : ''
     }
   
     this.canvas = null
@@ -22,33 +23,29 @@ class CreatePost extends React.Component {
     // console.log("canvas png", canvas.toDataURL())
   }
 
-  componentWillReceiveProps(nextProps) {
-    // console.log(nextProps)
-    this.setState({ newPost: nextProps.newPost.text });
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({ newPost: nextProps.newPost.text });
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    let post = {
-      text: this.state.text,
-      tag: this.state.tag
-    };
-    
-    this.props.composePost(post);
+    this.props.composePost(this.state);
     this.setState({ 
       text: '',
-      tag: ''
+      tag: '',
+      parent: ''
     });
   }
-
+  
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-
-
+  
+  
   render() {
+    console.log("create post state",this.state);
     return (
       <div>
 
@@ -81,7 +78,7 @@ class CreatePost extends React.Component {
           </div>
         </form>
         <br />
-        <PostSingle text={this.state.newPost} />
+        {/* <PostSingle text={this.state.newPost} /> */}
       </div>
     )
   }

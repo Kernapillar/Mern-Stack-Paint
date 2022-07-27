@@ -13,6 +13,7 @@ router.get("/test", (req, res) => {
 
 router.get('/', (req, res) => {
   Post.find()
+    .where({ parent: '' })
     .sort({ date: -1 })
     .then(posts => res.json(posts))
     .catch(err => res.status(404).json({ nopostsfound: 'No Posts found' }));
@@ -53,7 +54,8 @@ router.post('/',
       //parent ID, child posts
       user: req.user, 
       text: req.body.text,
-      tag: req.body.tag
+      tag: req.body.tag,
+      parent: req.body.parent
     });
 
     newPost.save()

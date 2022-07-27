@@ -33,7 +33,7 @@ class Profile extends React.Component {
 
           
           {this.state.posts.map(post => (
-            <PostSingle key={post._id} post={post} text={post.text} tag={post.tag} />
+            <PostSingle key={post._id} post={post} text={post.text} tag={post.tag} id={post._id} />
           ))}
         </div>
       );
