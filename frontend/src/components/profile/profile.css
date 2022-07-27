@@ -25,7 +25,7 @@ body {
     justify-content: center;
     /* flex-direction: column; */
     margin: auto;
-
+    padding-top: 100px;
 }
 
 .user-section > h1 {

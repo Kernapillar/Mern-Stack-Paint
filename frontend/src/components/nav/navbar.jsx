@@ -39,8 +39,8 @@ class NavBar extends React.Component {
           <Link to={'/posts/new'} className="link">Create a Post</Link> */}
           {/* <button onClick={this.logoutUser}className="logout-button">Logout</button> */}
           <div className='search-bar-container'>
-            <span className="material-symbols-outlined">search</span>
             <input type="text" onChange={this.update('search')} placeholder="search" className='search-bar' />
+            <span className="material-symbols-outlined">search</span> 
           </div>
           <HeaderDropDown className="header-dropdown-button"  logout={this.logoutUser}/>
         </div>
@@ -48,9 +48,13 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className='link-list'>
-          <Link to={'/signup'}>Signup</Link>
+          <div className='search-bar-container'>
+            <input type="text" onChange={this.update('search')} placeholder="search" className='search-bar' />
+            <span className="material-symbols-outlined">search</span> 
+          </div>
+          {/* <Link to={'/signup'}>Signup</Link>
           <br />
-          <Link to={'/login'}>Login</Link>
+          <Link to={'/login'}>Login</Link> */}
           <LoginDropdown className="header-dropdown-button" />
         </div>
       );
