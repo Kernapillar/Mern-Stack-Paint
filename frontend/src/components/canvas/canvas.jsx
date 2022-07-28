@@ -3,6 +3,7 @@ import Menu from './canvas_menu';
 import "./canvas.css"
 // import * as S3 from 'aws-sdk/clients/s3';
 
+
 function CanvasComponent() {
     const canvasElement = useRef(null);
     const canvasContext = useRef(null);
@@ -10,9 +11,13 @@ function CanvasComponent() {
     const [lineColor, setLineColor] = useState("black");
     const [drawSize, setDrawSize] = useState(5);
 
+    // const img = new Image();
+    //see lines 46-47 for loading the image on the canvas to draw over 
+
     const history = []
-
-
+    
+    
+    
     useEffect(() => {
         const canvas = canvasElement.current;
         const ctx = canvas.getContext("2d");
@@ -24,22 +29,39 @@ function CanvasComponent() {
         ctx.lineWidth = drawSize;
         canvasContext.current = ctx;
     }, [lineColor, drawSize]);
-
+    
     const clearCanvas = () =>  {
         canvasContext.current.fillStyle = "white"
         canvasContext.current.clearRect(0, 0, canvasElement.current.width, canvasElement.current.height)
         canvasContext.current.fillRect(0, 0, canvasElement.current.width, canvasElement.current.height)
     }
-
+    
     const start = (e) => {
         canvasContext.current.beginPath();
         canvasContext.current.moveTo(
             e.nativeEvent.offsetX,
             e.nativeEvent.offsetY
-        );
-        setIsDrawing(true)
-    }
+            );
+            setIsDrawing(true)
+        }
 
+        
+        // img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(img, 0, 0)  }, 10); } 
+        // // stalling for fraction of second async makes it so it doesn't glitch on loading
+        // img.src = "https://mernstackpaint.s3.us-west-1.amazonaws.com/1658975615541"
+        
+    // async function loadImage(url) {
+    //     const response = await fetch(url);
+    //     const blob = response.ok && await response.blob();
+    //     return createImageBitmap(blob);
+    // }
+
+    // loadImage("https://mernstackpaint.s3.us-west-1.amazonaws.com/1658975615541").then((imagefetch) => { canvasContext.current.drawImage(imagefetch, 0, 0);
+    // });
+
+
+
+        
     const stop = (e) => {
         canvasContext.current.closePath();
         setIsDrawing(false);

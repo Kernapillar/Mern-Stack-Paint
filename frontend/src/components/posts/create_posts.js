@@ -4,16 +4,18 @@ import CanvasComponent from '../canvas/canvas'
 import { useRef } from "react";
 import './create_posts.css';
 
+
 class CreatePost extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       text: "",
+
       tag: '',
       newPost: ""
     }
-  
+
     this.canvas = null
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -24,23 +26,27 @@ class CreatePost extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log(nextProps)
+    console.log("when do we hit nextprops",nextProps)
     this.setState({ newPost: nextProps.newPost.text });
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
+    const dataURL = this.canvas.toDataURL();
+    
     let post = {
       text: this.state.text,
-      tag: this.state.tag
+
+      blobData:  dataURL,
+      fileNum: `${Date.now()}`,
+
     };
-    
-    this.props.composePost(post).then(() =>this.props.history.push("/profile"));
+
+    this.props.composePost(post).then(() =>this.props.history.push("/profile"));;
     this.setState({ 
       text: '',
       tag: ''
     });
-
     
   }
 
@@ -59,6 +65,7 @@ class CreatePost extends React.Component {
           <div className='canvas-drawbox'>
             <CanvasComponent  />
           </div>
+
 
           <div className='new-post-content'>
             <textarea
@@ -80,6 +87,7 @@ class CreatePost extends React.Component {
             {/* <PostSingle text={this.state.newPost} /> */}
           </div>
         </form>
+
       </div>
     )
   }

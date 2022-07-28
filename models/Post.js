@@ -13,11 +13,6 @@ const PostSchema = new Schema({
   tag: {
     type: String
   },
-  //Add Image in separate model file
-  // image: {
-  //   type: ???? ,
-  //   required: true
-  // },
   date: {
     type: Date,
     default: Date.now

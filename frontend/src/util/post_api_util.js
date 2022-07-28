@@ -9,6 +9,7 @@ export const getUserPosts = id => {
 };
 
 export const writePost = data => {
+  console.log("postapiutil",data)
   return axios.post('/api/posts/', data)
 }
 
