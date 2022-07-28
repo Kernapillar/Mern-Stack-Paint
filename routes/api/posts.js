@@ -77,10 +77,8 @@ const params = {
           text: req.body.text,
           imageUrl: data.Location
         });
-        
-        console.log("new post hit?", newPost)
-        
-        console.log("is the imageurl emptyu",newPost.imageUrl)
+                
+        console.log("image url for local testing until threaded",newPost.imageUrl)
         
         newPost.save().then(post => res.json(post));
       
