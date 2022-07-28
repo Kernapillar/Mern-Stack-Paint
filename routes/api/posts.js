@@ -78,7 +78,7 @@ const params = {
           //parent ID, child posts
           user: req.user, 
           text: req.body.text,
-          tag: req.body.tag
+          tag: req.body.tag,
           imageUrl: data.Location
         });
                 
