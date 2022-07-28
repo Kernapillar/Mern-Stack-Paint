@@ -14,5 +14,5 @@ export const writePost = data => {
 }
 
 export const getPost = id => {
-  return axios.get(`/api/post/${id}`)
+  return axios.get(`/api/posts/${id}`)
 }

@@ -3,6 +3,7 @@ import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_NEW_POST, RECEIVE_POST } fro
 const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
+  console.log("action", action)
   switch (action.type) {
     case RECEIVE_POSTS:
       newState.all = action.posts.data;
@@ -14,7 +15,7 @@ const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => 
       newState.new = action.post.data
       return newState;
     case RECEIVE_POST:
-      newState.all[test] = action.post
+      newState["currentPost"] = action.post.data
       return newState;
     default:
       return state;
