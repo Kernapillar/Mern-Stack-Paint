@@ -93,8 +93,8 @@ function CanvasComponent() {
             onMouseUp={stop} 
             onMouseMove={draw}
             ref={canvasElement}
-            width={'1000px'}
-            height={'620px'}/>
+            width={'945px'}
+            height={'558px'}/>
         </div>
     )
 }

@@ -1,0 +1,88 @@
+body {
+    height: 100%;
+    /* background-color: rgb(15, 53, 53); */
+}
+
+.profile-container {
+    /* background-color: purple; */
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column wrap; */
+    margin: auto;
+    padding-top: 100px;
+    /* height: 1000px;  */
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, 400px); */
+    /* grid-auto-flow: column; */
+    /* overflow-x: scroll; */
+    /* grid-gap: 1rem; */
+    /* justify-content: center;  */
+}
+
+
+.user-section {
+    background-color: #00AFB9;
+    height: 500px;
+    width: 400px;
+    font-size: 38px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* padding: 8px; */
+    /* border: 1px solid black; */
+    /* margin: 10px 10px 10px 10px; */
+    margin: 25px;
+}
+
+.user-section > h1 {
+    height: 250px;
+    width: 250px;
+    background-color: #0081A7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-no-posts {
+    /* background-color: green; */
+    height: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-no-posts h1 {
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+
+.create-post-button {
+    background-color: #FED9B7;
+    text-transform: uppercase;
+    /* height: 100px; */
+    /* width: 200px; */
+    padding: 25px;
+    border-radius: 0.25rem;
+    letter-spacing: 1px;
+}
+
+.create-post-button:hover {
+    text-decoration: underline;
+    background-color: #F07167;
+}
+
+.profile-no-posts span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}

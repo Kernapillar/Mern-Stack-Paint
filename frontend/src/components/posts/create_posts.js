@@ -2,6 +2,7 @@ import React from 'react';
 import PostSingle from './posts_single';
 import CanvasComponent from '../canvas/canvas'
 import { useRef } from "react";
+import './create_posts.css';
 
 
 class CreatePost extends React.Component {
@@ -10,8 +11,9 @@ class CreatePost extends React.Component {
 
     this.state = {
       text: "",
-      newPost: "",
 
+      tag: '',
+      newPost: ""
     }
 
     this.canvas = null
@@ -34,55 +36,57 @@ class CreatePost extends React.Component {
     
     let post = {
       text: this.state.text,
+
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
 
     };
 
-    this.props.composePost(post);
-    this.setState({ text: '' })
-
+    this.props.composePost(post).then(() =>this.props.history.push("/profile"));;
+    this.setState({ 
+      text: '',
+      tag: ''
+    });
+    
   }
 
-
-  update(feild) {
+  update(field) {
     return e => this.setState({
-      [feild]: e.currentTarget.value
+      [field]: e.currentTarget.value
     });
   }
 
 
   render() {
     return (
-      <div>
+      <div className="new-post-container">
 
         <form onSubmit={this.handleSubmit}>
-
-
-          <div>
+          <div className='canvas-drawbox'>
             <CanvasComponent  />
-            <input type="textarea"
-              value={this.state.text}
-              onChange={this.update('text')}
-              placeholder="Write your Comment..."
-            />
-            <input type="text"
-              value={this.state.imageUrl}
-              onChange={this.update('imageUrl')}
-              placeholder="ImageUrl..."
-            />
-            <input type="submit" value="Submit" />
           </div>
 
-          <div>
 
-
+          <div className='new-post-content'>
+            <textarea
+              value={this.state.text}
+              onChange={this.update("text")}
+              placeholder="Write your Comment..."
+            className='text-input'/>
+            <div className='tag-submit'>
+              <select onChange={this.update("tag")} className="tag-dropdown">
+                <option value={1}>tag1</option>
+                <option value={2}>tag2</option>
+                <option value={3}>tag3</option>
+                {/* <option value={this.state.tag}>tag1</option>
+                <option value={this.state.tag}>tag2</option>
+                <option value={this.state.tag}>tag3</option> */}
+              </select>
+              <input type="submit" value="Submit" className='submit-button'/>
+            </div>
+            {/* <PostSingle text={this.state.newPost} /> */}
           </div>
         </form>
-        <br />
-        <PostSingle text={this.state.newPost} />
-
-
 
       </div>
     )

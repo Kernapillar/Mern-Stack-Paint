@@ -17,11 +17,12 @@ router.get("/test", (req, res) => {
     .sort({ date: -1 })
     .then(posts => res.json(posts))
     .catch(err => res.status(404).json({ nopostsfound: 'No Posts found' }));
-  });
-  
-  router.get('/user/:user_id', (req, res) => {
-    Post.find({ user: req.params.user_id })
-    .sort({ date: -1 })
+});
+
+router.get('/user/:user_id', (req, res) => {
+  Post.find({ user: req.params.user_id })
+    // .sort({ date: -1 })
+
     .then(posts => res.json(posts))
     .catch(err =>
       res.status(404).json({ nopostsfound: 'No Posts found from that user' }
@@ -61,6 +62,7 @@ router.post('/',
   let replaced = buffertry.replace("data:image/png;base64,","")
   buffalo = Buffer.from(replaced, 'base64')
 
+
 const params = {
   Bucket: process.env.AWS_S3_BUCKET_NAME,
   Key: req.body.fileNum,
@@ -73,8 +75,10 @@ const params = {
     s3.upload(params, (error, data)=> {
       if (error) { res.status(500).send({ "err": error }) }
           const newPost = new Post({
-          user: req.user,
+          //parent ID, child posts
+          user: req.user, 
           text: req.body.text,
+          tag: req.body.tag
           imageUrl: data.Location
         });
                 
@@ -84,6 +88,7 @@ const params = {
       
     })
   })
+
 
 
 module.exports = router;

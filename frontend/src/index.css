@@ -35,11 +35,11 @@ small {
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
-  background: transparent;
+  /* background: transparent; */
 }
-body {
-  background-color: transparent;
-}
+/* body {
+  background-color: inherit;
+} */
 ul {
   list-style: none;
 }

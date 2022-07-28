@@ -10,8 +10,8 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  imageUrl: {
-    type:  String 
+  tag: {
+    type: String
   },
   date: {
     type: Date,

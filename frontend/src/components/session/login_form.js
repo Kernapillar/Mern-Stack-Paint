@@ -16,14 +16,15 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+
   }
 
   // Once the user has been authenticated, redirect to the posts page
-  // Can alter to main page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/posts');
+      this.props.history.push('/');
       // this.props.history.push('/');
     }
 
@@ -50,6 +51,16 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
+  handleDemoLogin (e) {
+    e.preventDefault();  
+    const demo = {
+      email: "demodemo@demo.com",
+      password: "123456"
+    }
+
+    this.props.login(demo)
+  }
+
   // Render the session errors if there are any
   renderErrors() {
     return (
@@ -62,6 +73,9 @@ class LoginForm extends React.Component {
       </ul>
     );
   }
+
+  // View password or hide password based on toggle
+
 
   render() {
     return (
@@ -76,17 +90,23 @@ class LoginForm extends React.Component {
               placeholder="Email"
             className="input-field"/>
             <br />
+
             <label>Password</label>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             className="input-field"/>
+            
             <br />
             <input type="submit" value="Submit" className="submit-button"/>
             {this.renderErrors()}
+            <br />
+            <br />
+            <button className='submit-button' onClick={this.handleDemoLogin}> Demo Login </button>
           </div>
         </form>
+        
       </div>
     );
   }

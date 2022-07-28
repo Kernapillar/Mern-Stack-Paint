@@ -1,0 +1,59 @@
+.new-post-container {
+    padding-top: 100px;
+    width: 100%;
+}
+
+.canvas-drawbox {
+    float: left;
+    width: 66%;
+    margin-left: 1%;
+    overflow: hidden;
+}
+
+.new-post-content {
+    width: 32%;
+    height: 620px;
+    float: left;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.text-input {
+    width: 90%;
+    border-radius: 5px;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    border: 1px solid black;
+    text-align: top;
+    padding: 5px;
+    margin: 5px;
+    
+}
+
+.tag-dropdown {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 0.25rem;
+    width: 125px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+}
+
+.tag-submit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #F07167;
+}
