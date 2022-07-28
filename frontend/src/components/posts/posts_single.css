@@ -1,7 +1,7 @@
 .post-container {
     /* background-color: aqua; */
-    height: 500px;
-    width: 30%;
+    height: 300px;
+    width: 50%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,16 +14,33 @@
 .post {
     background-color: #FED9B7;
     font-family: Arial, Helvetica, sans-serif;
-    height: 400px;
+    /* height: 400px;
     width: 400px;
-    border-radius: 5px;
-    display: flex;
+    border-radius: 5px; */
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    /* height: 100%; */
     margin: 5%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
 }
+.post-card-pic {
+    width: 200px;
+    height: 200px;
+}
+
 .post:hover {
     border: 1px solid #F07167;
+}
+
+.comments-tags {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
 }
 
 .post-reply-button {
