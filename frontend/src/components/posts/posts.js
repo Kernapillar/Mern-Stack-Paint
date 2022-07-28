@@ -24,7 +24,11 @@ class Posts extends React.Component {
 
   render() {
     if (this.state.posts.length === 0) {
-      return (<div>There are no Posts</div>)
+      return (<div>There are no Posts
+
+        <img src="https://mernstackpaint.s3.us-west-1.amazonaws.com/1658960875412.png" ></img>
+
+      </div>)
     } else {
       return (
         <div>
@@ -32,6 +36,7 @@ class Posts extends React.Component {
           {this.state.posts.map(post => (
             <PostSingle key={post._id} text={post.text} />
           ))}
+
         </div>
       );
     }
