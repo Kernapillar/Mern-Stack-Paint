@@ -13,6 +13,9 @@ const PostSchema = new Schema({
   tag: {
     type: String
   },
+  imageUrl: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now

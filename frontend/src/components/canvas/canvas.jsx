@@ -11,7 +11,7 @@ function CanvasComponent() {
     const [lineColor, setLineColor] = useState("black");
     const [drawSize, setDrawSize] = useState(5);
 
-    // const img = new Image();
+    const img = new Image();
     //see lines 46-47 for loading the image on the canvas to draw over 
 
     const history = []
@@ -45,10 +45,11 @@ function CanvasComponent() {
             setIsDrawing(true)
         }
 
-        
-        // img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(img, 0, 0)  }, 10); } 
+        window.img = img        
+        window.img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(window.img, 0, 0)  }, 10); } 
         // // stalling for fraction of second async makes it so it doesn't glitch on loading
-        // img.src = "https://mernstackpaint.s3.us-west-1.amazonaws.com/1658975615541"
+        window.img.crossOrigin = "anonymous"
+        img.src = "https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030432103"
         
     // async function loadImage(url) {
     //     const response = await fetch(url);
