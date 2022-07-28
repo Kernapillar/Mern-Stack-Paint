@@ -12,26 +12,45 @@ class ShowPost extends React.Component {
     }
     render () {
         console.log("this.props.post",this.props.post)
-        if (!this.props.post) {
+        // console.log("text", this.props.post.currentPost)
+        if (!this.props.post.currentPost) {
             return null
         } else {
             return (
                 <div className='show-post-container'>
                     <div className='main-post-wrapper'>
-                        <div className='canvas-placeholder'></div>
                         <div className='main-post-container'>
-                            {/* console.this.props.post */}
-                            <h1>Author Name</h1>
-                            <h2>Comment: </h2>
-                            <span>
-                                Post Comment Post CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPostasasasasassasasassCommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost CommentPost Commentasasasasasasasa
-                            </span>
+                            <h1>Title</h1>
+                            <div className='canvas-placeholder'></div>
+                            <h2>user_id: {this.props.post.currentPost.user}</h2>
+                            
+                            <h4>
+                                {this.props.post.currentPost.text}
+                            </h4>
+                        </div>
+                        <h3>Comment: </h3>
+                        <div className='comments-wrapper'>
+                            <h1>username</h1>
+                            <h2>
+                                <div className='canvas-medium'>
+                                </div>
+                                <div className='comment-reply'>{this.props.post.currentPost.text}</div>
+                            </h2>
+                        </div>
+
+                        <div className='comments-wrapper'>
+                            <h1>username</h1>
+                            <h2>
+                                <div className='canvas-medium'>
+                                </div>
+                                <div className='comment-reply'>{this.props.post.currentPost.text}</div>
+                            </h2>
                         </div>
                     </div>
-                    <div className='replies-wrapper'>
+                    {/* <div className='replies-wrapper'>
                         <h1>Comments</h1>
                          
-                    </div>
+                    </div> */}
                 </div>
             )
         }

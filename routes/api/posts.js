@@ -29,6 +29,7 @@ router.get('/user/:user_id', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  console.log("req", req)
   Post.findById(req.params.id)
     .then(post => res.json(post))
     .catch(err =>

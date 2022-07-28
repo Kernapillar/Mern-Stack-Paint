@@ -45,6 +45,6 @@ export const composePost = data => dispatch => (
 
 export const fetchPost = postId => dispatch => (
   getPost(postId)
-    .then(post => dispatch(receivePost(post)))
+    .then(post => dispatch(receivePost(post), console.log(post)))
     .catch(err => console.log(err))
 );
