@@ -26,7 +26,8 @@ class Posts extends React.Component {
     if (this.state.posts.length === 0) {
       return (<div>There are no Posts
 
-        <img src="https://mernstackpaint.s3.us-west-1.amazonaws.com/1658960875412.png" ></img>
+        {/* this means the amazon links should work */}
+        {/* <img src="https://mernstackpaint.s3.us-west-1.amazonaws.com/1658975615541" ></img> */}
 
       </div>)
     } else {
