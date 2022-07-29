@@ -13,6 +13,8 @@ function CanvasComponent(props) {
     const [drawSize, setDrawSize] = useState(5);
 
     const img = new Image();
+    img.crossOrigin="anonymous"
+    img.crossOrigin="anonymous"
     //see lines 46-47 for loading the image on the canvas to draw over 
 
     const history = []
@@ -42,6 +44,7 @@ function CanvasComponent(props) {
         window.img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(window.img, 0, 0)  }, 10); } 
         // // stalling for fraction of second async makes it so it doesn't glitch on loading
         window.img.crossOrigin = "anonymous"
+        window.img.crossorigin = "anonymous"
         img.src = props.parentURL
     }
     

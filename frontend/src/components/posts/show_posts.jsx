@@ -28,7 +28,7 @@ class ShowPost extends React.Component {
 
                             <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
                             <h2>user_id: {this.props.post.currentPost.user}</h2>
-                            <h2><Link to={`/posts/colaborate/${this.props.post.currentPost.id}`}><button >Colaborate!</button></Link></h2>
+                            <h2><Link to={`/posts/colaborate/${this.props.post.currentPost.id}`}  ><button >Colaborate!</button></Link></h2>
                             <h4>
                                 {this.props.post.currentPost.text}
                             </h4>
