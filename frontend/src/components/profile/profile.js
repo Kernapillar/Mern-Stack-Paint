@@ -13,7 +13,6 @@ class Profile extends React.Component {
   }
 
   componentWillMount() {
-    // console.log(this.props.currentUser.id)
     this.props.fetchUserPosts(this.props.currentUser.id);
   }
 
@@ -37,14 +36,17 @@ class Profile extends React.Component {
     } else {
       return (
         <div className='profile-container'>
-          <div className="user-section">
+          {/* <div className="user-section">
             <h2>Username</h2>
             <h1>A</h1>
+          </div> */}
+          <h1>My Posts</h1>
+          <div className="post-list">
+            {this.state.posts.map(post => (
+              <li className='post'><PostSingle key={post._id} post={post} text={post.text} tag={post.tag} /></li>
+            ))}
           </div>
-
-          {this.state.posts.map(post => (
-            <PostSingle key={post._id} post={post} text={post.text} tag={post.tag} />
-          ))}
+          
         </div>
       );
     }

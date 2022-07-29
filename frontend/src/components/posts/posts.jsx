@@ -30,7 +30,7 @@ class Posts extends React.Component {
             <div className="post-list">
               {/* <h2>All Posts</h2> */}
               {this.props.posts.map(post => (
-              <li className='post-placeholder'> <PostSingle key={post._id} text={post.text} tag={post.tag} /></li>  
+              <li className='post'> <PostSingle key={post._id} text={post.text} tag={post.tag} /></li>  
               ))}
             </div>
           

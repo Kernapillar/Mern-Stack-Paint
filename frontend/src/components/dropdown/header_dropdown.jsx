@@ -32,10 +32,10 @@ const HeaderDropdown = (props) => {
                 <div className="dropdown-wrapper">
                     <ul>
                         <li className="dropdown-item"> <Link to={'/'}> <p className="logout-button">Home</p></Link></li>
-                        <li className="dropdown-item"> <Link to={'/profile'} > <p className="logout-button">Profile</p></Link></li>
+                        <li className="dropdown-item"> <Link to={'/profile'} > <p className="logout-button">My Posts</p></Link></li>
                         <li className="dropdown-item"> <Link to={'/about'}> <p className="logout-button">About</p></Link></li>
                         <li className="dropdown-item"> <Link to={'/posts/new'}> <p className="logout-button">Create Post</p></Link> </li>
-                        <li className="dropdown-item"> <p className="logout-button" onClick={props.logout}>Log Out</p> </li>
+                        <li className="dropdown-item"> <p className="logout-button" onClick={props.logout}>Logout</p> </li>
 
                     </ul>
                 </div>
