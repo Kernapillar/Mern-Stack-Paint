@@ -45,7 +45,7 @@ const AboutUs = () => {
                             <a href="https://github.com/dkwal" target=">blank">
                                 <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Danny's Github" />
                             </a>
-                            <a href="https://www.linkedin.com/in/vuongcindy/" target=">blank">
+                            <a href="https://www.linkedin.com/in/danielkwallace/" target=">blank">
                                 <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Danny's Linkedin" />
                             </a>
                         </div>
@@ -55,7 +55,7 @@ const AboutUs = () => {
                             <a href="https://github.com/AlchemR" target=">blank">
                                 <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Peter's Github" />
                             </a>
-                            <a href="https://www.linkedin.com/in/vuongcindy/" target=">blank">
+                            <a href="https://www.linkedin.com/in/peter-r-173614230/" target=">blank">
                                 <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Peter's Linkedin" />
                             </a>
                         </div>
