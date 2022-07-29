@@ -63,7 +63,7 @@ class CreatePost extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <div className='canvas-drawbox'>
-            <CanvasComponent  />
+            <CanvasComponent parentURL="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" />
           </div>
 
 

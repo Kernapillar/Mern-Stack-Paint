@@ -4,7 +4,8 @@ import "./canvas.css"
 // import * as S3 from 'aws-sdk/clients/s3';
 
 
-function CanvasComponent() {
+function CanvasComponent(props) {
+    console.log("CANVAS Props",props)
     const canvasElement = useRef(null);
     const canvasContext = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -35,6 +36,13 @@ function CanvasComponent() {
         canvasContext.current.clearRect(0, 0, canvasElement.current.width, canvasElement.current.height)
         canvasContext.current.fillRect(0, 0, canvasElement.current.width, canvasElement.current.height)
     }
+    if (props.parentURL){
+        window.img = img        
+        window.img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(window.img, 0, 0)  }, 10); } 
+        // // stalling for fraction of second async makes it so it doesn't glitch on loading
+        window.img.crossOrigin = "anonymous"
+        img.src = props.parentURL
+    }
     
     const start = (e) => {
         canvasContext.current.beginPath();
@@ -42,14 +50,10 @@ function CanvasComponent() {
             e.nativeEvent.offsetX,
             e.nativeEvent.offsetY
             );
-            setIsDrawing(true)
-        }
+        setIsDrawing(true)
+    }
 
-        window.img = img        
-        window.img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(window.img, 0, 0)  }, 10); } 
-        // // stalling for fraction of second async makes it so it doesn't glitch on loading
-        window.img.crossOrigin = "anonymous"
-        img.src = "https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030432103"
+
         
     // async function loadImage(url) {
     //     const response = await fetch(url);

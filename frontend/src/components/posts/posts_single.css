@@ -46,6 +46,7 @@
     height: 200px; */
     border: 3px solid black;
     border-radius: 10px;
+    background-color: white;
 }
 
 .post:hover {

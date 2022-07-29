@@ -10,7 +10,7 @@ class PostSingle extends React.Component {
           <h3>{" "}</h3>
         </div>
         <div className='picture-background'>
-          <img src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659028971443" alt="post-picture" className='post-card-pic'/>
+          <img src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="post-picture" className='post-card-pic'/>
         </div>
         
         {/* <p className="post">{this.props.text}</p> */}
