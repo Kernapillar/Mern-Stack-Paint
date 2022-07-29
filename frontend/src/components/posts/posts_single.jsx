@@ -3,8 +3,7 @@ import './posts_single.css'
 
 class PostSingle extends React.Component {
   render() {
-    // console.log("POSTSINGLESINURAREA", this.props)
-    // console.log("POSTSINGLESINURAREA", this.props.post)
+ 
     return (
       <div className="post-container">
         <div className='single-title'>

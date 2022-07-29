@@ -1,6 +1,6 @@
 // src/components/nav/navbar.js
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './navbar.css'
 import HeaderDropDown from '../dropdown/header_dropdown'
 import LoginDropdown from '../dropdown/login_header_dropdown';
@@ -80,7 +80,7 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         {/* <h1 className="app-name">M(ern) S(tack) Paint</h1> */}
-        <img className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
+        <img onClick={() => window.location.reload(false)} className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
         <br />
         {this.getLinks()}
       </div>

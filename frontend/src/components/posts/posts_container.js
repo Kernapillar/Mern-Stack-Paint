@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    fetchSearchTags: query => dispatch(fetchSearchTags(query))
+    fetchSearchTags: query => dispatch(fetchSearchTags(query)), 
+    
   };
 };
 

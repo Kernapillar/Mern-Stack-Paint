@@ -8,12 +8,16 @@ import "./posts.css"
 class Posts extends React.Component {
   constructor(props) {
     super(props);
-
+    this.filterTags = this.filterTags.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchPosts().then(this.render())
   } 
+
+  filterTags(tag){
+    this.props.fetchSearchTags(tag)
+  }
 
 
   render() {
@@ -21,9 +25,9 @@ class Posts extends React.Component {
         <div>
           <div className='index-sub-header'>
             <div className='tag-categories'>
-              <button className='submit-button'> Person </button>
-              <button className='submit-button'> Place</button>
-              <button className='submit-button'> Thing</button>
+              <button onClick={() => this.filterTags('Person')} className='submit-button'> Person </button>
+              <button onClick={() => this.filterTags('Place')} className='submit-button'> Place</button>
+              <button onClick={() => this.filterTags('Thing')} className='submit-button'> Thing</button>
             </div>
             <Link to={"/posts/new"}><button className='submit-button'> create new post</button></Link>
           </div>
