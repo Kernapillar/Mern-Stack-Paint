@@ -44,9 +44,11 @@
 .post-card-pic {
     /* width: 200px;
     height: 200px; */
+    display: flex;
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
+    align-self: center;
 }
 
 .post:hover {

@@ -75,9 +75,9 @@ class CreatePost extends React.Component {
             className='text-input'/>
             <div className='tag-submit'>
               <select onChange={this.update("tag")} className="tag-dropdown">
-                <option value={1}>tag1</option>
-                <option value={2}>tag2</option>
-                <option value={3}>tag3</option>
+                <option value={1}>Person</option>
+                <option value={2}>Place</option>
+                <option value={3}>Thing</option>
                 {/* <option value={this.state.tag}>tag1</option>
                 <option value={this.state.tag}>tag2</option>
                 <option value={this.state.tag}>tag3</option> */}

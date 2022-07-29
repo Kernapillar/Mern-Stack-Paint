@@ -9,6 +9,9 @@ body {
     /* overflow: hidden; */
 }
 
+.show-image {
+    background-color: white;
+}
 .main-post-wrapper {
     background-color: #FED9B7;
     /* height: 1620px; */

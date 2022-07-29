@@ -21,7 +21,7 @@ class ShowPost extends React.Component {
                     <div className='main-post-wrapper'>
                         <div className='main-post-container'>
                             <h1>Title</h1>
-                            <div className='canvas-placeholder'></div>
+                            <img className='show-image' src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="show picture" />
                             <h2>user_id: {this.props.post.currentPost.user}</h2>
                             
                             <h4>
@@ -33,6 +33,7 @@ class ShowPost extends React.Component {
                             <h1>username</h1>
                             <h2>
                                 <div className='canvas-medium'>
+                                    <img src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="" />
                                 </div>
                                 <div className='comment-reply'>{this.props.post.currentPost.text}</div>
                             </h2>
@@ -42,6 +43,7 @@ class ShowPost extends React.Component {
                             <h1>username</h1>
                             <h2>
                                 <div className='canvas-medium'>
+                                    <img src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="" />
                                 </div>
                                 <div className='comment-reply'>{this.props.post.currentPost.text}</div>
                             </h2>
