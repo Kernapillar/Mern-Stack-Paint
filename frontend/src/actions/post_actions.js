@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { getPosts, getUserPosts, writePost, getPost } from '../util/post_api_util';
-=======
+import { getPosts, getUserPosts, writePost, getPost, fetchSearch } from '../util/post_api_util';
 
-import { getPosts, getUserPosts, writePost, fetchSearch } from '../util/post_api_util';
->>>>>>> search-bar
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_USER_POSTS = "RECEIVE_USER_POSTS";
