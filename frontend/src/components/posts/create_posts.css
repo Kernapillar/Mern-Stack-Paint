@@ -23,6 +23,17 @@
     border-radius: 5px;
 }
 
+.title-input {
+    background-color: white;
+    height: 50px;
+    width: 350px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .text-input {
     width: 90%;
     border-radius: 5px;
