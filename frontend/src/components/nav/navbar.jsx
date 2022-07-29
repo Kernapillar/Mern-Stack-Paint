@@ -5,12 +5,14 @@ import './navbar.css'
 import HeaderDropDown from '../dropdown/header_dropdown'
 import LoginDropdown from '../dropdown/login_header_dropdown';
 
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
     this.update = this.update.bind(this)
+    this.search = this.search.bind(this)
     this.state = {
       search: ""
     }
@@ -21,11 +23,20 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+  search(e){
+    e.preventDefault();
+    // setTimeout(() => this.props.search(this.state.search).bind(this) , 1000 )
+    this.props.search(this.state.search).then(res => setTimeout(()=> res, 10))
+    // this.props.history.push(`/search/${this.state.search}`)
+    this.setState({"search": ""})
   }
+
+  update(field) {
+    return e => 
+    this.setState({ [field]: e.currentTarget.value });
+  }
+
+
 
 
   // Selectively render links dependent on whether the user is logged in
@@ -38,9 +49,13 @@ class NavBar extends React.Component {
           <Link to={'/profile'} className="link">Profile</Link>
           <Link to={'/posts/new'} className="link">Create a Post</Link> */}
           {/* <button onClick={this.logoutUser}className="logout-button">Logout</button> */}
+          {console.log(this.props)}
           <div className='search-bar-container'>
-            <input type="text" onChange={this.update('search')} placeholder="search" className='search-bar' />
+            <form onSubmit={this.search}> <input type="text" onChange={this.update("search")} value={this.state.search} placeholder="search" className='search-bar' />  </form>
+            {/* <input type="text" onChange={this.update('search')} value={this.state.search} placeholder="search" className='search-bar' /> */}
+
             <span className="material-symbols-outlined">search</span> 
+            
           </div>
           <HeaderDropDown className="header-dropdown-button"  logout={this.logoutUser}/>
         </div>
@@ -49,7 +64,7 @@ class NavBar extends React.Component {
       return (
         <div className='link-list'>
           <div className='search-bar-container'>
-            <input type="text" onChange={this.update('search')} placeholder="search" className='search-bar' />
+            <form onSubmit={this.search}> <input type="text" onChange={this.update("search")} value={this.state.search} placeholder="search" className='search-bar' />  </form>
             <span className="material-symbols-outlined">search</span> 
           </div>
           {/* <Link to={'/signup'}>Signup</Link>

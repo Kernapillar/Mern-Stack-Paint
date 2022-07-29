@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/post_actions'
+import { fetchPosts, fetchSearchTags } from '../../actions/post_actions'
 import Posts from './posts';
 
 
@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchPosts: () => dispatch(fetchPosts())
+    fetchPosts: () => dispatch(fetchPosts()),
+    fetchSearchTags: query => dispatch(fetchSearchTags(query))
   };
 };
 

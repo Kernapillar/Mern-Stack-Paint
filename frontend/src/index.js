@@ -8,6 +8,9 @@ import { logout } from './actions/session_actions';
 import './index.css';
 
 import axios from "axios";
+// import { search } from '../../routes/api/posts';
+import { fetchSearch } from './util/post_api_util'
+import { fetchSearchPosts } from './actions/post_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -26,8 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore({});
   }
-  const root = document.getElementById('root');
   
+
   window.axios = axios
+  window.store = store
+  window.fetchSearchPosts = fetchSearchPosts
+  
+  const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -16,3 +16,13 @@ export const writePost = data => {
 export const getPost = id => {
   return axios.get(`/api/posts/${id}`)
 }
+  
+export const fetchSearch = query => {
+  console.log("query", query)
+  return axios.get(`/api/posts/search/${query}`)
+}
+
+export const fetchTags = query => {
+  console.log("query", query)
+  return axios.get(`/api/posts/tags/${query}`)
+}

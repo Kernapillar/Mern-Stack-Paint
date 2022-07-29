@@ -12,17 +12,19 @@ import CreatePostContainer from './posts/create_posts_container';
 import ShowPostContainer from './posts/show_posts_container';
 import ProfileContainer from "./profile/profile_container";
 import AboutUs from "./about_us/about_us";
+import SearchResultsContainer from './posts/search_container';
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-      <Route exact path="/" component={PostsContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/posts/new" component={CreatePostContainer} />
       <Route path="/posts/:id" component={ShowPostContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      {/* <Route  path="/search" component={SearchResultsContainer} /> */}
+      <Route exact path="/" component={PostsContainer} />
       <Route exact path="/about" component={AboutUs} />
     </Switch>
   </div>
