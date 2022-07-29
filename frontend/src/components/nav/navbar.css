@@ -41,6 +41,7 @@ body {
 
 .logout-button:hover {
   background-color: #F07167;
+  color: white;
 }
 
 .search-bar-container {
@@ -48,14 +49,16 @@ body {
   align-items: center;
   justify-content: center;
   background-color: white;
+  /* justify-content: space-around; */
+  /* background-color: gold; */
   border-radius: 4px;
-  padding: 5px;
+  /* padding: 5px; */
   width: 75%;
 }
 
 .search-bar {
-  width: 85%;
-  height: 80%;
+  width: 400px;
+  /* height: 80%; */
   font-size: 20px;
   /* background-color: gainsboro; */
   letter-spacing: 1px;
