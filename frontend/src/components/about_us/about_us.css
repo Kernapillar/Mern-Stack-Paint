@@ -1,15 +1,13 @@
 .about-container {
     padding-top: 150px;
-    /* background-color: cornflowerblue; */
-    /* height: 0px; */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .description {
-    background-color: #0081A7;
-    height: 275px;
+    background-color :#009CCC;
+    height: 260px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     overflow-y: auto;
@@ -29,7 +27,6 @@
     height: 200px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
-    /* display: flex; */
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -37,19 +34,12 @@
 .team > h1 {
     font-size: 32px;
     padding-bottom: 10px;
-    /* background-color: purple; */
-    /* position: fixed; */
-    
 }
 
 .team li {
-    /* background-color: green; */
     font-size: 24px;
-    /* margin-left: 15px; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
-    /* list-style-type: circle; */
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -58,7 +48,6 @@
 
 ul.team-members {
     display: flex;
-    /* background-color: green; */
     height: 150px;
 }
 
@@ -72,11 +61,19 @@ ul.team-members {
 #github {
     height: 100px;
     width: 100px;
-    /* background-color: purple; */
+    box-sizing: border-box;
+}
+
+#github:hover {
+    border-bottom: 2px solid #F07167;
 }
 
 #linkedin {
     height: 100px;
     width: 100px;
-    /* background-color: orange; */
+    box-sizing: border-box;
+}
+
+#linkedin:hover {
+    border-bottom: 2px solid #F07167;
 }
