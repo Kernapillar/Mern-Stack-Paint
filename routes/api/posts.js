@@ -89,6 +89,32 @@ const params = {
     })
   })
 
+router.patch('/:id', 
+  passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+      console.log("do we hit request",req)
+  Post.findByIdAndUpdate(req.params.id, req.body, 
+  // Post.findByIdAndUpdate(req.params.id,req.body) , 
+    (error, data) => {
+      if (error) {
+        console.log(error);
+      } else {
+        res.json(data), console.log("success!");
+      }
+    })
+})
+
+router.delete('/:id', (req, res) => {
+  Post.findByIdAndDelete(req.params.id, (error, data) => {
+    if (error) {
+      console.log(error);
+    } else {
+      res.status(200).json({
+        message: data
+      })
+    }
+  })
+})
 
 
 module.exports = router;

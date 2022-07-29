@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import './index.css';
+import * as test from "./actions/post_actions";
 
 import axios from "axios";
 
@@ -28,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   
+  window.updatePost = test.updatePost;
+  window.deletePost = test.deletePost;
   window.axios = axios
+  window.store = store;
   ReactDOM.render(<Root store={store} />, root);
 });
