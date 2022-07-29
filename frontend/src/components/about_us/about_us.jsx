@@ -50,7 +50,7 @@ const AboutUs = () => {
                             </a>
                         </div>
                     </li>
-                    <li>Peter Romo (Backend)
+                    <li>Peter Romo (Backend Lead)
                         <div className='icons'>
                             <a href="https://github.com/AlchemR" target=">blank">
                                 <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Peter's Github" />
