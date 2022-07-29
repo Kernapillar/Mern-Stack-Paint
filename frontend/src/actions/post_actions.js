@@ -1,4 +1,5 @@
-import { getPosts, getUserPosts, writePost, getPost } from '../util/post_api_util';
+import { getPosts, getUserPosts, writePost, getPost, fetchSearch } from '../util/post_api_util';
+
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_USER_POSTS = "RECEIVE_USER_POSTS";
@@ -46,5 +47,16 @@ export const composePost = data => dispatch => (
 export const fetchPost = postId => dispatch => (
   getPost(postId)
     .then(post => dispatch(receivePost(post), console.log(post)))
+    )
+
+export const fetchSearchPosts = search => dispatch => (
+  fetchSearch(search)
+    .then(posts => dispatch(receivePosts(posts)))
+    .catch(err => console.log(err))
+);
+
+export const fetchSearchTags = search => dispatch => (
+  fetchSearch(search)
+    .then(posts => dispatch(receivePosts(posts)))
     .catch(err => console.log(err))
 );

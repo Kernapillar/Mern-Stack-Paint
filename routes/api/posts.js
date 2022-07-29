@@ -30,14 +30,34 @@ router.get('/user/:user_id', (req, res) => {
       );
     });
     
-    router.get('/:id', (req, res) => {
-      Post.findById(req.params.id)
-      .then(post => res.json(post))
-      .catch(err =>
-        res.status(404).json({ nopostsfound: 'No Post found with that ID' })
-        );
-      });
+router.get('/:id', (req, res) => {
+  Post.findById(req.params.id)
+  .then(post => res.json(post))
+  .catch(err =>
+    res.status(404).json({ nopostsfound: 'No Post found with that ID' })
+    );
+  });
       
+
+router.get('/search/:query', (req, res) => {
+  // console.log(req.params.query, 'this should be the query')
+  Post.find({ "text": { $regex: req.params.query, $options: 'i' } })
+    .then(posts => {
+      res.json(posts);
+    })
+    .catch(err => res.status(404).json({ nopostsfound: 'No posts found with that query' }));
+})
+
+router.get('/tags/:query', (req, res) => {
+  // console.log(req.params.query, 'this should be the query')
+  Post.find({ "tags": { $regex: req.params.query, $options: 'i' } })
+    .then(posts => {
+      res.json(posts);
+    })
+    .catch(err => res.status(404).json({ nopostsfound: 'No posts found with that tag' }));
+})
+
+
 
       aws.config.update({
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,              
@@ -74,6 +94,7 @@ const params = {
   
     s3.upload(params, (error, data)=> {
       if (error) { res.status(500).send({ "err": error }) }
+          console.log(req.user)
           const newPost = new Post({
           //parent ID, child posts
           user: req.user, 
