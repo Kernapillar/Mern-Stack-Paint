@@ -74,7 +74,7 @@ class Colaborate extends React.Component {
               value={this.state.title}
               onChange={this.update("title")}
               placeholder="Add a Title to your post..."
-              className='text-input' />
+              className='title-input' />
             <textarea
               value={this.state.text}
               onChange={this.update("text")}
