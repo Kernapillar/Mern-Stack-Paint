@@ -25,7 +25,7 @@ const AboutUs = () => {
                             <a href="https://github.com/Kernapillar" target=">blank">
                                 <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Alex's Github" />
                             </a>
-                            <a href="https://www.linkedin.com/in/vuongcindy/" target=">blank">
+                            <a href="https://www.linkedin.com/in/alex-kern-8978301b4/" target=">blank">
                                 <img src="https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png" id="linkedin" alt="link to Alex's Linkedin" />
                             </a>
                         </div>
