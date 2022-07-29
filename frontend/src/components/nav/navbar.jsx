@@ -64,7 +64,8 @@ class NavBar extends React.Component {
       return (
         <div className='link-list'>
           <div className='search-bar-container'>
-            <form onSubmit={this.search}> <input type="text" onChange={this.update("search")} value={this.state.search} placeholder="search" className='search-bar' />  </form>
+            <form onSubmit={this.search}> <input type="text" onChange={this.update("search")} value={this.state.search} placeholder="search" className='search-bar' />  
+            </form>
             <span className="material-symbols-outlined">search</span> 
           </div>
           {/* <Link to={'/signup'}>Signup</Link>
