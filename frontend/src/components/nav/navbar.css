@@ -104,5 +104,6 @@ body {
 }
 
 .header-logo {
-  width: 150px;
+  width: 100px;
+  height: 60px;
 }

@@ -43,7 +43,9 @@ class Profile extends React.Component {
           <h1>My Posts</h1>
           <div className="post-list">
             {this.state.posts.map(post => (
+          <Link to={`/posts/${post._id}`}>
               <li className='post'><PostSingle key={post._id} post={post} text={post.text} tag={post.tag} /></li>
+            </Link>
             ))}
           </div>
           

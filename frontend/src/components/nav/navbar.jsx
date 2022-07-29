@@ -80,7 +80,10 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         {/* <h1 className="app-name">M(ern) S(tack) Paint</h1> */}
-        <img onClick={() => window.location.reload(false)} className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
+        {/* <img onClick={() => window.location.reload(false)} className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" /> */}
+        <Link to="/">
+        <img className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
+        </Link>
         <br />
         {this.getLinks()}
       </div>
