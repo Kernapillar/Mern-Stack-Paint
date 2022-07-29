@@ -5,7 +5,7 @@ import { useRef } from "react";
 import './create_posts.css';
 
 
-class CreatePost extends React.Component {
+class Colaborate extends React.Component {
   constructor(props) {
     super(props);
 
@@ -59,21 +59,22 @@ class CreatePost extends React.Component {
 
 
   render() {
+    console.log("parrenturlsasdfasdf", this.props)
     return (
       <div className="new-post-container">
 
         <form onSubmit={this.handleSubmit}>
           <div className='canvas-drawbox'>
-            <CanvasComponent parentURL={this.props.parentURL} />
+            <CanvasComponent parentURL={this.props.parentUrl} />
           </div>
 
 
           <div className='new-post-content'>
-            <input
+            <textarea
               value={this.state.title}
               onChange={this.update("title")}
               placeholder="Add a Title to your post..."
-              className='title-input' />
+              className='text-input' />
             <textarea
               value={this.state.text}
               onChange={this.update("text")}
@@ -96,4 +97,4 @@ class CreatePost extends React.Component {
   }
 }
 
-export default CreatePost;
+export default Colaborate;

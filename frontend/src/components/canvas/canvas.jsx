@@ -37,6 +37,7 @@ function CanvasComponent(props) {
         canvasContext.current.fillRect(0, 0, canvasElement.current.width, canvasElement.current.height)
     }
     if (props.parentURL){
+        console.log("HI")
         window.img = img        
         window.img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(window.img, 0, 0)  }, 10); } 
         // // stalling for fraction of second async makes it so it doesn't glitch on loading
@@ -88,7 +89,7 @@ function CanvasComponent(props) {
         console.log(canvasElement.current.toDataURL('image/svg'))
     }
 
-
+    console.log("THIS IS THE CANVAS PROPS", props)
     return (
         <div className="canvas-element">
             <Menu className="canvas-menu" setLineColor={setLineColor} setDrawSize={setDrawSize} clearCanvas={clearCanvas}

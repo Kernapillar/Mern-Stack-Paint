@@ -1,5 +1,7 @@
 import React from 'react';
 import './show_posts.css';
+import CanvasComponent from '../canvas/canvas';
+import { Link } from 'react-router-dom';
  
 class ShowPost extends React.Component {
     constructor(props) {
@@ -20,12 +22,13 @@ class ShowPost extends React.Component {
                 <div className='show-post-container'>
                     <div className='main-post-wrapper'>
                         <div className='main-post-container'>
-                            <h1>Title</h1>
+                            {/* <h1>Title</h1> */}
+                            <h1>{this.props.post.currentPost.title ? `${this.props.post.currentPost.title}` : "Title"}</h1>
                             {/* <img src={`${this.props.post.imageUrl}`} alt="post-picture" className='post-card-pic'/> */}
 
                             <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
                             <h2>user_id: {this.props.post.currentPost.user}</h2>
-                            
+                            <h2><Link to={`/posts/colaborate/${this.props.post.currentPost.id}`}><button >Colaborate!</button></Link></h2>
                             <h4>
                                 {this.props.post.currentPost.text}
                             </h4>
@@ -35,7 +38,7 @@ class ShowPost extends React.Component {
                             <h1>username</h1>
                             <h2>
                                 <div className='canvas-medium'>
-                                    <img src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="" />
+                                    <img src={`${this.props.post.currentPost.imageUrl}`} alt="" />
                                 </div>
                                 <div className='comment-reply'>{this.props.post.currentPost.text}</div>
                             </h2>
@@ -45,7 +48,7 @@ class ShowPost extends React.Component {
                             <h1>username</h1>
                             <h2>
                                 <div className='canvas-medium'>
-                                    <img src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="" />
+                                    <img src={`${this.props.post.currentPost.imageUrl}`} alt="" />
                                 </div>
                                 <div className='comment-reply'>{this.props.post.currentPost.text}</div>
                             </h2>

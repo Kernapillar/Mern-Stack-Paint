@@ -7,7 +7,7 @@ class PostSingle extends React.Component {
     return (
       <div className="post-container">
         <div className='single-title'>
-          <h3 className='post-card-title'>Title</h3>
+          <h3 className='post-card-title'>{this.props.post.title ? `${this.props.post.title}` : "Title"}</h3>
           <h3>{" "}</h3>
         </div>
         <div className='picture-background'>

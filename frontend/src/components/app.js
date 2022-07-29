@@ -13,6 +13,7 @@ import ShowPostContainer from './posts/show_posts_container';
 import ProfileContainer from "./profile/profile_container";
 import AboutUs from "./about_us/about_us";
 import SearchResultsContainer from './posts/search_container';
+import ColaborateContainer from './posts/colaborate_post_container'
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/posts/new" component={CreatePostContainer} />
+      <ProtectedRoute exact path="/posts/colaborate/:id" component={ColaborateContainer} />
       <Route path="/posts/:id" component={ShowPostContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       {/* <Route  path="/search" component={SearchResultsContainer} /> */}
