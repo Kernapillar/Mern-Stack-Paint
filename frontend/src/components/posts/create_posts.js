@@ -11,7 +11,7 @@ class CreatePost extends React.Component {
 
     this.state = {
       text: "",
-
+      title: "",
       tag: '',
       newPost: ""
     }
@@ -36,7 +36,7 @@ class CreatePost extends React.Component {
     
     let post = {
       text: this.state.text,
-
+      title: this.state.title,
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
 
@@ -45,7 +45,8 @@ class CreatePost extends React.Component {
     this.props.composePost(post).then(() =>this.props.history.push("/profile"));;
     this.setState({ 
       text: '',
-      tag: ''
+      tag: '',
+      title: ''
     });
     
   }
@@ -69,22 +70,24 @@ class CreatePost extends React.Component {
 
           <div className='new-post-content'>
             <textarea
+              value={this.state.title}
+              onChange={this.update("title")}
+              placeholder="Add a Title to your post..."
+              className='text-input' />
+            <textarea
               value={this.state.text}
               onChange={this.update("text")}
               placeholder="Write your Comment..."
             className='text-input'/>
             <div className='tag-submit'>
               <select onChange={this.update("tag")} className="tag-dropdown">
-                <option value={1}>Person</option>
-                <option value={2}>Place</option>
-                <option value={3}>Thing</option>
-                {/* <option value={this.state.tag}>tag1</option>
-                <option value={this.state.tag}>tag2</option>
-                <option value={this.state.tag}>tag3</option> */}
+                <option value={"person"}>Person</option>
+                <option value={"place"}>Place</option>
+                <option value={"thing"}>Thing</option>
               </select>
               <input type="submit" value="Submit" className='submit-button'/>
             </div>
-            {/* <PostSingle text={this.state.newPost} /> */}
+
           </div>
         </form>
 

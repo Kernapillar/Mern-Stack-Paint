@@ -98,6 +98,7 @@ const params = {
           const newPost = new Post({
           //parent ID, child posts
           user: req.user, 
+          title: req.body.title,
           text: req.body.text,
           tag: req.body.tag,
           imageUrl: data.Location
