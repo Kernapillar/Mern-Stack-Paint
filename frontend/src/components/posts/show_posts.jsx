@@ -21,7 +21,9 @@ class ShowPost extends React.Component {
                     <div className='main-post-wrapper'>
                         <div className='main-post-container'>
                             <h1>Title</h1>
-                            <img className='show-image' src="https://mernstackdrawwizard.s3.us-west-1.amazonaws.com/1659030472215" alt="show picture" />
+                            {/* <img src={`${this.props.post.imageUrl}`} alt="post-picture" className='post-card-pic'/> */}
+
+                            <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
                             <h2>user_id: {this.props.post.currentPost.user}</h2>
                             
                             <h4>
