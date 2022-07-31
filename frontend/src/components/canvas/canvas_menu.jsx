@@ -6,6 +6,7 @@ import "./canvas.css"
 const Menu = ({setLineColor, setDrawSize, clearCanvas, handleSubmit }) => {
 
     
+    
 
     return (
         <div className="canvas-menu">
