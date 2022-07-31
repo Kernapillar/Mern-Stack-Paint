@@ -1,5 +1,4 @@
 /node_modules
 /frontend/node_modules
 .env
-/config/passport.js
 /config/keys_dev.js
