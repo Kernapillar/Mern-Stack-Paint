@@ -76,6 +76,7 @@ router.post('/',
 
     passport.authenticate('jwt', { session: false }),
   (req, res) => {
+    console.log("posts routes req",req)
     const { isValid, errors } = validatePostInput(req.body);
     if (!isValid) { return res.status(400).json(errors); }
   const buffertry = req.body.blobData
@@ -94,16 +95,19 @@ const params = {
   
     s3.upload(params, (error, data)=> {
       if (error) { res.status(500).send({ "err": error }) }
-          console.log(req.user)
+          console.log("posts.js line 98",req)
+          console.log("posts.js line 99",req.user)
           const newPost = new Post({
           //parent ID, child posts
-          user: req.user, 
+          user: req.user,
+          userName: req.user.handle,  
           title: req.body.title,
           text: req.body.text,
           tag: req.body.tag,
           imageUrl: data.Location
         });
                 
+        console.log("posts.js line 110 post submitted object ",newPost )
         console.log("image url for local testing until threaded",newPost.imageUrl)
         
         newPost.save().then(post => res.json(post));

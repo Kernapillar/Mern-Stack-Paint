@@ -13,6 +13,7 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
     this.update = this.update.bind(this)
     this.search = this.search.bind(this)
+    this.homereload = this.homereload.bind(this)
     this.state = {
       search: ""
     }
@@ -37,7 +38,13 @@ class NavBar extends React.Component {
   }
 
 
+homereload(e){
+  e.preventDefault();
+  setTimeout( ()=> window.location.reload(), 1 )
+  this.props.history.push("/")
+  return {}
 
+}
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
@@ -82,9 +89,11 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         {/* <h1 className="app-name">M(ern) S(tack) Paint</h1> */}
         {/* <img onClick={() => window.location.reload(false)} className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" /> */}
-        <Link to="/">
+        
+        {/* <Link to="/">
         <img className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
-        </Link>
+        </Link> */}
+        <img onClick={(e) => this.homereload(e)} className='header-logo' src="https://kernify-seed.s3.us-west-1.amazonaws.com/MSPaint.png" alt="" />
         <br />
         {this.getLinks()}
       </div>

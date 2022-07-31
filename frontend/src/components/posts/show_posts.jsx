@@ -12,6 +12,8 @@ class ShowPost extends React.Component {
         this.props.fetchPost(this.props.match.params.id)
             .then(console.log("random shit", this.props))
     }
+
+
     render () {
         console.log("this.props.post",this.props.post)
         // console.log("text", this.props.post.currentPost)
@@ -27,7 +29,7 @@ class ShowPost extends React.Component {
                             {/* <img src={`${this.props.post.imageUrl}`} alt="post-picture" className='post-card-pic'/> */}
 
                             <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
-                            <h2>user_id: {this.props.post.currentPost.user}</h2>
+                            <h2>{this.props.post.currentPost.userName ? `Username: ${this.props.post.currentPost.userName}` :  `user_id: ${this.props.post.currentPost.user}` }</h2>
                             <h2><Link to={`/posts/colaborate/${this.props.post.currentPost.id}`}  ><button >Colaborate!</button></Link></h2>
                             <h4>
                                 {this.props.post.currentPost.text}

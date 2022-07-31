@@ -56,7 +56,6 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
-  console.log("users.js file asking where this shows up")
   console.log(errors);
   
   if (!isValid) {
@@ -68,6 +67,7 @@ router.post('/login', (req, res) => {
 
   User.findOne({ email })
     .then(user => {
+      console.log("routes user object line 70", user)
       if (!user) {
         return res.status(404).json({ email: 'This user does not exist' });
       }
@@ -75,7 +75,8 @@ router.post('/login', (req, res) => {
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
-            const payload = { id: user.id, name: user.name };
+            const payload = { id: user.id, name: user.handle };
+            console.log("users routes lin e79", payload)
 
             jwt.sign( payload, keys.secretOrKey,
               // Tell the key to expire in one hour

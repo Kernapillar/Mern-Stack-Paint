@@ -3,6 +3,11 @@ import Menu from './canvas_menu';
 import "./canvas.css"
 // import * as S3 from 'aws-sdk/clients/s3';
 
+const img = new Image();
+img.crossOrigin="anonymous"
+img.crossOrigin="anonymous"
+let loaded = false
+let count = 1
 
 function CanvasComponent(props) {
     console.log("CANVAS Props",props)
@@ -12,11 +17,8 @@ function CanvasComponent(props) {
     const [lineColor, setLineColor] = useState("black");
     const [drawSize, setDrawSize] = useState(5);
 
-    const img = new Image();
-    img.crossOrigin="anonymous"
-    img.crossOrigin="anonymous"
     //see lines 46-47 for loading the image on the canvas to draw over 
-
+    console.log("loaded",loaded)
     const history = []
     
     
@@ -38,14 +40,21 @@ function CanvasComponent(props) {
         canvasContext.current.clearRect(0, 0, canvasElement.current.width, canvasElement.current.height)
         canvasContext.current.fillRect(0, 0, canvasElement.current.width, canvasElement.current.height)
     }
-    if (props.parentURL){
+
+    if (props.parentURL && count < 42 ){
         console.log("HI")
-        window.img = img        
-        window.img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(window.img, 0, 0)  }, 10); } 
+        // window.img = img        
+        img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(img, 0, 0)  }, 10); } 
         // // stalling for fraction of second async makes it so it doesn't glitch on loading
-        window.img.crossOrigin = "anonymous"
-        window.img.crossorigin = "anonymous"
-        img.src = props.parentURL
+        // window.img.crossOrigin = "anonymous"
+        // window.img.crossorigin = "anonymous"
+        img.src=`${props.parentURL}?${count}`
+        count += 1
+        console.log("count is rediculout", count)
+        // img.src = `https://crossorigin.me/${props.parentURL}`
+
+        // loaded = true
+        console.log("loaded after",loaded)
     }
     
     const start = (e) => {
