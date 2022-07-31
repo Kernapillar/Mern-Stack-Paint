@@ -2,6 +2,7 @@ import React from 'react';
 import './show_posts.css';
 import CanvasComponent from '../canvas/canvas';
 import { Link } from 'react-router-dom';
+import PostReplyItem from './post_reply_item'
  
 class ShowPost extends React.Component {
     constructor(props) {
@@ -37,12 +38,11 @@ class ShowPost extends React.Component {
                         </div>
                         <h3>Comment: </h3>
                         <div className='comments-wrapper'>
-                            <h1>username</h1>
                             <h2>
                                 <div className='canvas-medium'>
-                                    <img src={`${this.props.post.currentPost.imageUrl}`} alt="" />
+                                    <PostReplyItem post={this.props.post.currentPost}/> 
                                 </div>
-                                <div className='comment-reply'>{this.props.post.currentPost.text}</div>
+
                             </h2>
                         </div>
 
