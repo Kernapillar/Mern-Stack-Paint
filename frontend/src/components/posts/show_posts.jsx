@@ -37,14 +37,9 @@ class ShowPost extends React.Component {
                             </h4>
                         </div>
                         <h3>Comment: </h3>
-                        <div className='comments-wrapper'>
-                            <h2>
-                                <div className='canvas-medium'>
-                                    <PostReplyItem post={this.props.post.currentPost}/> 
-                                </div>
+                            
+                            <PostReplyItem post={this.props.post.currentPost}/> 
 
-                            </h2>
-                        </div>
 
                         <div className='comments-wrapper'>
                             <h1>username</h1>
