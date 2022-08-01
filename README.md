@@ -24,8 +24,8 @@ MernStackPaint is an art sharing website where users can create posts with simpl
    * 
 * Canvas API
 
-<img width="488" alt="image" src="https://user-images.githubusercontent.com/103595719/182243737-d748de0f-32a9-481b-a46c-bea24b4be38f.png">
-<img width="488" alt="image-1" src="https://user-images.githubusercontent.com/103595719/182243835-47bf7559-c986-462e-8b71-1ae97d83e7a7.png">
+![image](https://user-images.githubusercontent.com/103587019/182245917-4d053b7f-ac3b-4884-b6a1-5f08e3af57a8.png)
+code snippet of the canvas drawing menu, rendering the color changing buttons, pen size, and allowing users to clear the canvas and restart. 
    * 
 * MongoDB
 * Express
