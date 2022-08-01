@@ -56,6 +56,10 @@
     background-color: violet;
     margin: 3px;
 }
+.black {
+    background-color: black;
+    margin: 3px;
+}
 
 .canvas-button {
     background-color: #0081A7;
