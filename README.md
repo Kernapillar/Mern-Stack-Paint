@@ -21,7 +21,10 @@ MernStackPaint is an art sharing website where users can create posts with simpl
 ## Technologies Used
 * AWS S3
 <img width="488" alt="Screen Shot 2022-07-31 at 5 35 13 PM" src="https://user-images.githubusercontent.com/103595719/182243861-6a269d29-e170-4e32-bcdc-0000145e849a.png">
-   * 
+   * Canvas data is converted to base64 data string, then converted a blob, then uploaded to amazon S3 webservice for external storage
+   * the URL is saved as as a string in the post for later retreival and re-use if collaboration is desired
+   * upon re-use, it is reconverted to base64 string, and imported into canvas to be drawn over
+
 * Canvas API
 
 ![image](https://user-images.githubusercontent.com/103587019/182245917-4d053b7f-ac3b-4884-b6a1-5f08e3af57a8.png)
@@ -35,8 +38,4 @@ code snippet of the canvas drawing menu, rendering the color changing buttons, p
 ## Future Project Goals
 * Create parent/child structure for posts so that replies can be nested under the parent post
 * Make tags optional and be able to add more than one
-<<<<<<< HEAD
 * Like posts and follow threads
-=======
-* Like posts and follow threads
->>>>>>> 944e594 (Add production ReadMe)
