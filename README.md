@@ -35,4 +35,8 @@ code snippet of the canvas drawing menu, rendering the color changing buttons, p
 ## Future Project Goals
 * Create parent/child structure for posts so that replies can be nested under the parent post
 * Make tags optional and be able to add more than one
+<<<<<<< HEAD
 * Like posts and follow threads
+=======
+* Like posts and follow threads
+>>>>>>> 944e594 (Add production ReadMe)

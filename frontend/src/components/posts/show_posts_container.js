@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPost } from '../../actions/post_actions';
+import { fetchPost, deletePost } from '../../actions/post_actions';
 import ShowPost from './show_posts';
 import { withRouter } from 'react-router-dom';
  
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
  
 const mapDispatchToProps = dispatch => {
     return {
-        fetchPost: (id) => dispatch(fetchPost(id))
+        fetchPost: (id) => dispatch(fetchPost(id)),
+        deletePost: id => dispatch(deletePost(id))   
     }
 }
  

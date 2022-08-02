@@ -1,14 +1,19 @@
-import { getPosts, getUserPosts, writePost, getPost, fetchSearch } from '../util/post_api_util';
-
+import { getPosts, getUserPosts, writePost, changePost, destroyPost, getPost, fetchSearch } from '../util/post_api_util';
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
+export const RECEIVE_POST = "RECEIVE_POST";
 export const RECEIVE_USER_POSTS = "RECEIVE_USER_POSTS";
 export const RECEIVE_NEW_POST = "RECEIVE_NEW_POST";
-export const RECEIVE_POST = "RECEIVE_POST";
+export const REMOVE_POST = "REMOVE_POST";
 
 export const receivePosts = posts => ({
   type: RECEIVE_POSTS,
   posts
+});
+
+export const receivePost = post => ({
+  type: RECEIVE_POST,
+  post
 });
 
 export const receiveUserPosts = posts => ({
@@ -21,10 +26,10 @@ export const receiveNewPost = post => ({
   post
 });
 
-export const receivePost = post => ({
-  type: RECEIVE_POST,
-  post
-});
+export const removePost = postId => ({
+  type: REMOVE_POST,
+  postId
+})
 
 export const fetchPosts = () => dispatch => (
   getPosts()
@@ -38,16 +43,23 @@ export const fetchUserPosts = id => dispatch => (
     .catch(err => console.log(err))
 );
 
+export const fetchPost = id => dispatch => (
+  getPost(id)
+    .then(post => dispatch(receivePost(post)))
+    .catch(err => console.log(err))
+);
+
+// export const fetchPost = postId => dispatch => (
+//   getPost(postId)
+//     .then(post => dispatch(receivePost(post), console.log(post)))
+//     )
+
 export const composePost = data => dispatch => (
   writePost(data)
     .then(post => dispatch(receiveNewPost(post)))
     .catch(err => console.log(err))
 );
 
-export const fetchPost = postId => dispatch => (
-  getPost(postId)
-    .then(post => dispatch(receivePost(post), console.log(post)))
-    )
 
 export const fetchSearchPosts = search => dispatch => (
   fetchSearch(search)
@@ -60,3 +72,15 @@ export const fetchSearchTags = search => dispatch => (
     .then(posts => dispatch(receivePosts(posts)))
     .catch(err => console.log(err))
 );
+export const updatePost = data => dispatch => (
+  console.log("line 76 post actions", data),
+  changePost(data)
+    .then(post => dispatch(receivePost(post)))
+    .catch(err => console.log(err))
+);
+
+export const deletePost = id => dispatch => (
+  destroyPost(id)
+    .then(post => dispatch(removePost(post._id)))
+    .catch(err => console.log(err))
+)

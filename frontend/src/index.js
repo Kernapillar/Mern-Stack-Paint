@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import './index.css';
+import * as test from "./actions/post_actions";
 
 import axios from "axios";
 // import { search } from '../../routes/api/posts';
@@ -33,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.axios = axios
   window.store = store
-  window.fetchSearchPosts = fetchSearchPosts
   
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

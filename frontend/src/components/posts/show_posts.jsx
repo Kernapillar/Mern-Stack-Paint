@@ -6,11 +6,30 @@ import { Link } from 'react-router-dom';
 class ShowPost extends React.Component {
     constructor(props) {
        super(props)
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchPost(this.props.match.params.id)
             .then(console.log("random shit", this.props))
+    }
+
+    handleDeleteClick() {
+        if (this.props.deletePost){
+        console.log("show posts delete click",this.props)
+        this.props.deletePost(this.props.match.params.id);
+        this.props.history.push('/profile');}
+    }
+
+    handleUpdate(){
+        console.log("handle update this props line 26",this.props.match.params.id)
+        console.log("handle update this props line 26 typeof ",typeof this.props.match.params.id)
+        console.log("handle update this props line 26 this.props", this.props)
+        // console.log("handle update this props line 26 typeof ",typeof this.props.match.params.id)
+    
+
+        this.props.history.push(`/posts/update/${this.props.match.params.id}`)
     }
 
 
@@ -31,6 +50,8 @@ class ShowPost extends React.Component {
                             <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
                             <h2>{this.props.post.currentPost.userName ? `Username: ${this.props.post.currentPost.userName}` :  `user_id: ${this.props.post.currentPost.user}` }</h2>
                             <h2><Link to={`/posts/colaborate/${this.props.post.currentPost.id}`}  ><button >Colaborate!</button></Link></h2>
+                            <h2><button onClick={() => this.handleUpdate()} >Edit Post!</button></h2>
+                            <h2><button onClick={() => this.handleDeleteClick()} >Delete Post!</button></h2>
                             <h4>
                                 {this.props.post.currentPost.text}
                             </h4>
