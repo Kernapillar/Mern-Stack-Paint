@@ -14,14 +14,14 @@ class EditPost extends React.Component {
         this.state = {
           text: this.props.post.text,
           tag: this.props.post.tag,
-          imageUrl: this.props.post.imageUrl
+          blobData: ""
         
         }
     } else {
         this.state = {
             text: '',
             tag: '',
-            imageUrl: ""
+            blobData: ""
         }
     }
     this.canvas = null
@@ -42,16 +42,15 @@ class EditPost extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    // const dataURL = this.canvas.toDataURL();
-    
+    console.log("submit start from edit post")
+    const dataURL = this.canvas.toDataURL();
+    console.log("",dataURL)
     let post = {
       text: this.state.text,
       tag: this.state.tag,
-      // blobData:  dataURL,
-      imageUrl: this.state.imageUrl,
-      //will have to change this later to accomidate amazon 
       fileNum: `${Date.now()}`,
-      id: this.props.postId
+      id: this.props.postId,
+      blobData:  dataURL
 
     };
 
@@ -79,7 +78,8 @@ class EditPost extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <div className='canvas-drawbox'>
-            <CanvasComponent  />
+            {/* <CanvasComponent  /> */}
+            <CanvasComponent key={this.props.postId} parentURL={window.freshurl} />
           </div>
 
 
@@ -91,9 +91,9 @@ class EditPost extends React.Component {
             className='text-input'/>
             <div className='tag-submit'>
               <select onChange={this.update("tag")} className="tag-dropdown">
-                <option value={1}>tag1</option>
-                <option value={2}>tag2</option>
-                <option value={3}>tag3</option>
+                <option value={"person"}>Person</option>
+                <option value={"place"}>Place</option>
+                <option value={"thing"}>Thing</option>
                 {/* <option value={this.state.tag}>tag1</option>
                 <option value={this.state.tag}>tag2</option>
                 <option value={this.state.tag}>tag3</option> */}

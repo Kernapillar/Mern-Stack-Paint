@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require('passport');
 const aws = require('aws-sdk')         
-// require("dotenv").config();                      // for env file
+require("dotenv").config();                      // for env file
 
 const validatePostInput = require('../../validation/post');
 const Post = require('../../models/Post')
@@ -113,7 +113,69 @@ const params = {
         newPost.save().then(post => res.json(post));
       
     })
-  })
+  }
+  )
+
+router.patch('/:id', 
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    console.log("posts routes req", req)
+    // const { isValid, errors } = validatePostInput(req.body);
+    // if (!isValid) { return res.status(400).json(errors); }
+    const buffertry = req.body.blobData
+    console.log("buffertry 126 posts.js",buffertry)
+    let replaced = buffertry.replace("data:image/png;base64,", "")
+    buffalo = Buffer.from(replaced, 'base64')
+
+
+
+    const params = {
+      Bucket: process.env.AWS_S3_BUCKET_NAME,
+      Key: req.body.fileNum,
+      Body: buffalo,
+      ACL: "public-read-write",
+      ContentEncoding: 'base64',
+      ContentType: "image/png"
+    }
+
+    console.log("line 141 after params set on bucket")
+
+    s3.upload(params, (error, data) => {
+      if (error) { res.status(500).send({ "err": error }) }
+      console.log("posts.js line 142", req)
+      console.log("posts.js line 143", req.user)
+      console.log("posts.js data 144", data)
+      const updatePost = ({
+        //parent ID, child posts
+        id: req.body.id,
+        user: req.user,
+        userName: req.user.handle,
+        title: req.body.title,
+        text: req.body.text,
+        tag: req.body.tag,
+        imageUrl: data.Location
+      });
+      Post.findByIdAndUpdate(updatePost.id, updatePost).then(post => res.json(post))
+      // newPost.save().then(post => res.json(post));
+
+    })
+  }
+
+
+//   (req, res) => {
+//       console.log("do we hit request",req)
+//   Post.findByIdAndUpdate(req.params.id, req.body, 
+//   // Post.findByIdAndUpdate(req.params.id,req.body) , 
+//     (error, data) => {
+//       if (error) {
+//         console.log(error);
+//       } else {
+//         res.json(data), console.log("success!");
+//       }
+//     })
+// }
+)
+
 
 router.patch('/:id', 
   passport.authenticate('jwt', { session: false }),

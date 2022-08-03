@@ -3,6 +3,9 @@ import { composePost } from '../../actions/post_actions';
 import Colaborate from './colaborate_post';
 
 
+
+
+
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.user,

@@ -25,6 +25,11 @@ function CanvasComponent(props) {
     
     useEffect(() => {
         const canvas = canvasElement.current;
+        // console.log("canvas", canvas)
+        // console.log("canvas typeof", typeof canvas)
+        // console.log("canvaselement", canvasElement.current)
+        // console.log("canvaselement", typeof canvasElement.current)
+
         const ctx = canvas.getContext("2d");
         
         ctx.lineCap = "round";
@@ -41,20 +46,25 @@ function CanvasComponent(props) {
         canvasContext.current.fillRect(0, 0, canvasElement.current.width, canvasElement.current.height)
     }
 
-    if (props.parentURL && count < 42 ){
+    if (props.parentURL ){
         console.log("HI")
         // window.img = img        
         img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(img, 0, 0)  }, 10); } 
         // // stalling for fraction of second async makes it so it doesn't glitch on loading
         // window.img.crossOrigin = "anonymous"
         // window.img.crossorigin = "anonymous"
-        img.src=`${props.parentURL}?${count}`
+        img.src=`${props.parentURL}`
+        console.log(`${props.parentURL}`)
+        // console.log("console img src",img.src=`${props.parentURL}?${count}`)
+        // img.src=`${props.parentURL}?${count}`
+        // console.log("console img src",img.src=`${props.parentURL}?${count}`)
+
         count += 1
         console.log("count is rediculout", count)
         // img.src = `https://crossorigin.me/${props.parentURL}`
 
         // loaded = true
-        console.log("loaded after",loaded)
+        // console.log("loaded after",loaded)
     }
     
     const start = (e) => {

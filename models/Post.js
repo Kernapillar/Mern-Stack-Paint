@@ -21,6 +21,29 @@ const PostSchema = new Schema({
   tag: {
     type: String
   },
+  origin: {
+    type: Schema.Types.ObjectId,
+  },
+  parentUrl: {
+    type: Schema.Types.ObjectId,
+  },
+  catchAllAncestors: [{
+    type: Schema.Types.ObjectId,
+  }],
+  // origin: {
+  //   type: String,
+  // },
+  // parentComment: [{
+  //   type: String,
+  // }],
+
+// try objectId first, see if string worst case
+// make origin when new post is created
+// add parentcomment to array when comment is replied to in post
+// Array size limit may pose limit over total replies available
+// search should fetch all posts including that ID;
+// for heirarchy, sort by Array.length of parrent comments
+
   imageUrl: {
     type: String
   },
