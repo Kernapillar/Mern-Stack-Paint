@@ -17,6 +17,9 @@ const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => 
     case RECEIVE_POST:
     newState["currentPost"] = action.post.data;
       return newState
+    case RECEIVE_COMMENTS:
+    newState["comments"] = action.post.data;
+      return newState
     case REMOVE_POST:
       delete newState.user[action.postId];
       return newState;

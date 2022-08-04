@@ -57,6 +57,15 @@ router.get('/tags/:query', (req, res) => {
     .catch(err => res.status(404).json({ nopostsfound: 'No posts found with that tag' }));
 })
 
+router.get('/comments/:query', (req, res) => {
+  // console.log(req.params.query, 'this should be the query')
+  Post.find({ "parentUrls": { $regex: req.params.query } })
+    .then(posts => {
+      res.json(posts);
+    })
+    .catch(err => res.status(404).json({ nopostsfound: 'No comments found' }));
+})
+
 
 
       aws.config.update({
@@ -96,9 +105,9 @@ const params = {
     s3.upload(params, (error, data)=> {
       if (error) { res.status(500).send({ "err": error }) }
           console.log("posts.js line 98",req)
-          console.log("posts.js line 99",req.user)
+          // console.log("posts.js line 99",req.user)
           const newPost = new Post({
-          //parent ID, child posts
+          parentUrls: req.body.parentUrls,
           user: req.user,
           userName: req.user.handle,  
           title: req.body.title,
@@ -106,12 +115,19 @@ const params = {
           tag: req.body.tag,
           imageUrl: data.Location
         });
-                
+        
         console.log("posts.js line 110 post submitted object ",newPost )
+        console.log("posts.js line 111 post submitted object origin ",newPost.origin )
+        console.log("posts.js line 112 post submitted object ID ",newPost._id )
+        // if (!newPost.origin) {newPost.origin = newPost._id}
+        console.log("posts.js line 113 post submitted object ", newPost )
         console.log("image url for local testing until threaded",newPost.imageUrl)
         
         newPost.save().then(post => res.json(post));
-      
+        console.log("posts.js line 117 post submitted object ",newPost )
+        console.log("posts.js line 118 post submitted object ", newPost._id )
+        console.log("posts.js line 118 post submitted object ",newPost._id )
+        
     })
   }
   )

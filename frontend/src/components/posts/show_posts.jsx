@@ -33,22 +33,22 @@ class ShowPost extends React.Component {
 
 
 
-async getBase64ImageFromUrl(imageUrl) {
-    var res = await fetch(imageUrl);
-    var blob = await res.blob();
+// async getBase64ImageFromUrl(imageUrl) {
+//     var res = await fetch(imageUrl);
+//     var blob = await res.blob();
 
-    return new Promise((resolve, reject) => {
-        var reader = new FileReader();
-        reader.addEventListener("load", function () {
-            resolve(reader.result);
-        }, false);
+//     return new Promise((resolve, reject) => {
+//         var reader = new FileReader();
+//         reader.addEventListener("load", function () {
+//             resolve(reader.result);
+//         }, false);
 
-        reader.onerror = () => {
-            return reject(this);
-        };
-        reader.readAsDataURL(blob);
-    })
-}
+//         reader.onerror = () => {
+//             return reject(this);
+//         };
+//         reader.readAsDataURL(blob);
+//     })
+// }
 
 
 
@@ -77,24 +77,24 @@ async getBase64ImageFromUrl(imageUrl) {
     canvasConvert() {
         let convertCanvas = document.createElement("canvas");
         convertCanvas.id = 123456789
-        console.log("convertCanvas", convertCanvas)
+        // console.log("convertCanvas", convertCanvas)
         convertCanvas.height = 558
         convertCanvas.width = 945
         const img1 = new Image();
         img1.crossOrigin = "anonymous"
         img1.src = `${this.props.post.currentPost.imageUrl}?${99999999}`
-        console.log("img1 src in collab", img1.src = `${this.props.post.currentPost.imageUrl}?${99999999}`)
+        // console.log("img1 src in collab", img1.src = `${this.props.post.currentPost.imageUrl}?${99999999}`)
 
         let ctxt = convertCanvas.getContext('2d');
         img1.onload = () => {
             ctxt.drawImage(img1, 0, 0)
             let converted = convertCanvas.toDataURL()
-            console.log("we waited")
-            console.log("we waited 110")
+            // console.log("we waited")
+            // console.log("we waited 110")
             // this.pause(1000)
-            console.log("we waited 112")
+            // console.log("we waited 112")
             window.freshurl = converted
-            console.log("window.freshurl", window.freshurl)
+            // console.log("window.freshurl", window.freshurl)
         }
 
     }
@@ -104,12 +104,15 @@ async getBase64ImageFromUrl(imageUrl) {
 
     render () {
         console.log("this.props.post",this.props.post)
-        let parentUrlBlob;
+        
         if (!this.props.post.currentPost) {
             return null
         } else {
             return (
                 <div className='show-post-container'>
+                    {console.log("this.props.post ID ",this.props.post.currentPost._id)}
+                    {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
+                    {console.log("this.props.post parenturls length",this.props.post.currentPost.parentUrls.length)}
                     {this.canvasConvert()}
                     {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}
                     {/* {console.log("text", this.props.post.currentPost.imageUrl)} */}

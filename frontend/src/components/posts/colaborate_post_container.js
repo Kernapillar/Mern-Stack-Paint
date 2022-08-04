@@ -7,10 +7,13 @@ import Colaborate from './colaborate_post';
 
 
 const mapStateToProps = (state, ownProps) => {
+  console.log("collaborate post container", ownProps)
+  console.log("collaborate post container state", state)
   return {
     currentUser: state.session.user,
     newPost: state.posts.new,
-    parentUrl: state.posts.currentPost.imageUrl
+    parentUrl: state.posts.currentPost.imageUrl,
+    currentPost: state.posts.currentPost
   };
 };
 

@@ -21,14 +21,13 @@ const PostSchema = new Schema({
   tag: {
     type: String
   },
-  origin: {
+  // origin: {
+  //   type: Schema.Types.ObjectId,
+  //   default: null,
+  // },
+  parentUrls: [{
     type: Schema.Types.ObjectId,
-  },
-  parentUrl: {
-    type: Schema.Types.ObjectId,
-  },
-  catchAllAncestors: [{
-    type: Schema.Types.ObjectId,
+    default: {}
   }],
   // origin: {
   //   type: String,

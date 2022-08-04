@@ -39,7 +39,6 @@ class CreatePost extends React.Component {
       title: this.state.title,
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
-
     };
 
     this.props.composePost(post).then(() =>this.props.history.push("/"));;
@@ -80,10 +79,10 @@ class CreatePost extends React.Component {
               placeholder="Write your Comment..."
             className='text-input'/>
             <div className='tag-submit'>
-              <select onChange={this.update("tag")} className="tag-dropdown">
+              <select onChange={this.update("tag")} className="tag-dropdown"  >
                 <option value={"person"}>Person</option>
-                <option value={"place"}>Place</option>
-                <option value={"thing"}>Thing</option>
+                <option value={"place"} >Place</option>
+                <option value={"thing"} selected>Thing</option>
               </select>
               <input type="submit" value="Submit" className='submit-button'/>
             </div>

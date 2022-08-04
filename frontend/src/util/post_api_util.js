@@ -26,6 +26,11 @@ export const fetchTags = query => {
   console.log("query", query)
   return axios.get(`/api/posts/tags/${query}`)
 }
+export const fetchComments = query => {
+  console.log("query", query)
+  return axios.get(`/api/posts/comments/${query}`)
+}
+
 export const changePost = data => {
   console.log("are we hitting post api util", data)
   return axios.patch(`/api/posts/${data.id}`, data)
