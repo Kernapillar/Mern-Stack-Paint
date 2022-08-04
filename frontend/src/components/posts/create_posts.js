@@ -23,6 +23,7 @@ class CreatePost extends React.Component {
   componentDidMount() {
     this.canvas = document.getElementById("canvas-page-element")
     // console.log("canvas png", canvas.toDataURL())
+    this.setState({ tag: "thing" })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,6 +38,7 @@ class CreatePost extends React.Component {
     let post = {
       text: this.state.text,
       title: this.state.title,
+      tag: this.state.tag,
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
     };
