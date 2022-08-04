@@ -8,69 +8,37 @@ class ShowPost extends React.Component {
        super(props)
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this)
+        console.log("show posts header", this)
     }
 
 
-
-// fetchImage = (url) => {
-//     fetch(url)
-//         .then((res) => res.blob())
-//         .then((blob) => {
-//             // Read the Blob as DataURL using the FileReader API
-//             const reader = new FileReader();
-//             reader.onloadend = () => {
-//                 console.log(reader.result);
-//                 // Logs data:image/jpeg;base64,wL2dvYWwgbW9yZ...
-
-//                 // Convert to Base64 string
-//                 // const base64 = getBase64StringFromDataURL(reader.result);
-//                 // console.log(base64);
-//                 // Logs wL2dvYWwgbW9yZ...
-//             };
-//             return reader.readAsDataURL(blob);
-//         });
-// }
-
-
-
-// async getBase64ImageFromUrl(imageUrl) {
-//     var res = await fetch(imageUrl);
-//     var blob = await res.blob();
-
-//     return new Promise((resolve, reject) => {
-//         var reader = new FileReader();
-//         reader.addEventListener("load", function () {
-//             resolve(reader.result);
-//         }, false);
-
-//         reader.onerror = () => {
-//             return reject(this);
-//         };
-//         reader.readAsDataURL(blob);
-//     })
-// }
-
-
+    componentWillMount(){
+        this.props.fetchPost(this.props.match.params.id)
+            .then(console.log("componentwillmount", this.props))
+        .then(this.props.fetchComments(this.props.match.params.id))
+            .then(console.log("componentwillmount", this.props))
+    }
 
     componentDidMount() {
-        this.props.fetchPost(this.props.match.params.id)
-            .then(console.log("random shit", this.props))
+
+        // this.props.fetchComments(this.props.post.currentPost._id)
+        // console.log("component did mount", this.props.post.currentPost.parentUrls.concat(this.props.post.currentPost._id))
+            // .then(console.log("random shit", this.props))
+            console.log("random shit", this)
     }
 
     handleDeleteClick() {
         if (this.props.deletePost){
-        console.log("show posts delete click",this.props)
+        // console.log("show posts delete click",this.props)
         this.props.deletePost(this.props.match.params.id);
         this.props.history.push('/profile');}
     }
 
     handleUpdate(){
-        console.log("handle update this props line 26",this.props.match.params.id)
-        console.log("handle update this props line 26 typeof ",typeof this.props.match.params.id)
-        console.log("handle update this props line 26 this.props", this.props)
+        // console.log("handle update this props line 26",this.props.match.params.id)
         // console.log("handle update this props line 26 typeof ",typeof this.props.match.params.id)
-    
-
+        // console.log("handle update this props line 26 this.props", this.props)
+        // console.log("handle update this props line 26 typeof ",typeof this.props.match.params.id)
         this.props.history.push(`/posts/update/${this.props.match.params.id}`)
     }
 
@@ -104,7 +72,14 @@ class ShowPost extends React.Component {
 
     render () {
         console.log("this.props.post",this.props.post)
-        
+        let fetched = false;
+        if (this.props.post.currentPost && !fetched){
+        // this.props.fetchComments(this.props.post.currentPost.parentUrls.concat(this.props.post.currentPost._id))
+        // this.props.fetchComments(this.props.post.currentPost.parentUrls)
+        // fetched = true    
+        console.log("zero string",this.props.post.currentPost.parentUrls)
+        }
+
         if (!this.props.post.currentPost) {
             return null
         } else {
@@ -112,8 +87,8 @@ class ShowPost extends React.Component {
                 <div className='show-post-container'>
                     {console.log("this.props.post ID ",this.props.post.currentPost._id)}
                     {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
-                    {console.log("this.props.post parenturls length",this.props.post.currentPost.parentUrls.length)}
                     {this.canvasConvert()}
+
                     {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}
                     {/* {console.log("text", this.props.post.currentPost.imageUrl)} */}
                     {/* {this.getBase64ImageFromUrl(this.props.post.currentPost.imageUrl).then(result => parentUrlBlob = result, console.log("parenturlblob 89",parentUrlBlob))}  */}
@@ -136,6 +111,7 @@ class ShowPost extends React.Component {
                                 {this.props.post.currentPost.text}
                             </h4>
                         </div>
+                        {/* this.props. */}
                         <h3>Comment: </h3>
                         <div className='comments-wrapper'>
                             <h1>username</h1>

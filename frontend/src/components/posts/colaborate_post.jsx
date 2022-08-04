@@ -45,7 +45,7 @@ class Colaborate extends React.Component {
       title: this.state.title,
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
-      parentUrls: this.props.currentPost.parentUrls.concat(this.props.currentPost._id)
+      parentUrls: this.props.currentPost._id
     };
 
     this.props.composePost(post).then(() =>this.props.history.push("/"));;
@@ -137,7 +137,7 @@ if (!window.freshurl) { return null } else{
       {/* {this.canvasConvert()} */}
         <form onSubmit={this.handleSubmit}>
           <div className='canvas-drawbox'>
-            {console.log( "concat collaborate post", this.props.currentPost.parentUrls.concat(this.props.currentPost._id))}
+            {/* {console.log( "concat collaborate post", this.props.currentPost.parentUrls.concat(this.props.currentPost._id))} */}
             <CanvasComponent key={this.props.parentUrl} parentURL={window.freshurl} />
           </div>
 

@@ -1,4 +1,4 @@
-import { getPosts, getUserPosts, writePost, changePost, destroyPost, getPost, fetchSearch, fetchComments } from '../util/post_api_util';
+import { getPosts, getUserPosts, writePost, changePost, destroyPost, getPost, fetchSearch, fetchCommentChildren } from '../util/post_api_util';
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
@@ -35,7 +35,7 @@ export const receiveNewPost = post => ({
 export const removePost = postId => ({
   type: REMOVE_POST,
   postId
-})
+});
 
 export const fetchPosts = () => dispatch => (
   getPosts()
@@ -43,8 +43,9 @@ export const fetchPosts = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const fetchComments = () => dispatch => (
-  fetchComments()
+export const fetchComments = (query) => dispatch => (
+  console.log("query data", query),
+  fetchCommentChildren(query)
     .then(posts => dispatch(receiveComments(posts)))
     .catch(err => console.log(err))
 );
@@ -85,7 +86,7 @@ export const fetchSearchTags = search => dispatch => (
     .catch(err => console.log(err))
 );
 export const updatePost = data => dispatch => (
-  console.log("line 76 post actions", data),
+  // console.log("line 76 post actions", data),
   changePost(data)
     .then(post => dispatch(receivePost(post)))
     .catch(err => console.log(err))

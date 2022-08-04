@@ -58,11 +58,12 @@ router.get('/tags/:query', (req, res) => {
 })
 
 router.get('/comments/:query', (req, res) => {
-  // console.log(req.params.query, 'this should be the query')
-  Post.find({ "parentUrls": { $regex: req.params.query } })
-    .then(posts => {
-      res.json(posts);
-    })
+  console.log(req.params.query, 'this should be the query')
+  console.log(typeof req.params.query, 'this should be the query typeof')
+
+  Post.find({ parentUrls: req.params.query })
+  //I think something's going on with the array
+    .then(post => { res.json(post) })
     .catch(err => res.status(404).json({ nopostsfound: 'No comments found' }));
 })
 

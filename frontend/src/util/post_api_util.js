@@ -26,7 +26,7 @@ export const fetchTags = query => {
   console.log("query", query)
   return axios.get(`/api/posts/tags/${query}`)
 }
-export const fetchComments = query => {
+export const fetchCommentChildren = query => {
   console.log("query", query)
   return axios.get(`/api/posts/comments/${query}`)
 }
@@ -41,3 +41,4 @@ export const destroyPost = id => {
 }
 
 //
+//http://localhost:3000/api/posts/comments/62eb3b9a8249aa92f4660a31
