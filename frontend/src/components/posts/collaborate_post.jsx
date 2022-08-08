@@ -144,7 +144,7 @@ if (!window.freshurl) { return null } else{
 
 
           <div className='new-post-content'>
-            <textarea
+          <input
               value={this.state.title}
               onChange={this.update("title")}
               placeholder="Add a Title to your post..."
