@@ -104,12 +104,17 @@ class ShowPost extends React.Component {
 
                             <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
                             <h2>{this.props.post.currentPost.userName ? `Username: ${this.props.post.currentPost.userName}` :  `user_id: ${this.props.post.currentPost.user}` }</h2>
-                            <h2><Link to={`/posts/colaborate/${this.props.post.currentPost.id}`}  ><button >Colaborate!</button></Link></h2>
-                            <h2><button onClick={() => this.handleUpdate()} >Edit Post!</button></h2>
-                            <h2><button onClick={() => this.handleDeleteClick()} >Delete Post!</button></h2>
                             <h4>
                                 {this.props.post.currentPost.text}
                             </h4>
+                            <h2 className="action-buttons">
+                                <Link to={`/posts/collaborate/${this.props.post.currentPost.id}`}>
+                                    <button className="action-button">Collaborate</button>
+                                </Link>
+                                <button onClick={() => this.handleUpdate()} className="action-button">Edit Post</button>
+                                <button onClick={() => this.handleDeleteClick()} className="action-button">Delete Post</button>
+                            </h2>
+                            
                         </div>
                         {/* this.props. */}
                         <h3>Comment: </h3>
