@@ -12,12 +12,6 @@ const mongoose = require('mongoose');
 router.get("/test", (req, res) => {
   res.json({ msg: "this is the testing route Posts" }) } )  ;
   
-  router.get('/', (req, res) => {
-    Post.find()
-    .sort({ date: -1 })
-    .then(posts => res.json(posts))
-    .catch(err => res.status(404).json({ nopostsfound: 'No Posts found' }));
-});
 
 router.get('/user/:user_id', (req, res) => {
   Post.find({ user: req.params.user_id })
@@ -50,7 +44,10 @@ router.get('/search/:query', (req, res) => {
 
 router.get('/tags/:query', (req, res) => {
   // console.log(req.params.query, 'this should be the query')
-  Post.find({ "tags": { $regex: req.params.query, $options: 'i' } })
+  // console.log(req.params, 'this should be the params')
+  // Post.find({ "tags": { $regex: req.params.query } })
+  Post.find({ "tag": { $regex: req.params.query, $options: 'i' } })
+  // Post.find({ "tags": { $regex: req.params.query, $options: 'i' } }).where()
     .then(posts => {
       res.json(posts);
     })
@@ -69,6 +66,20 @@ router.get('/comments/:query', (req, res) => {
 
 
 
+
+
+
+router.get('/', (req, res) => {
+  console.log("are we hitting here")
+  Post.find()
+    .sort({ date: -1 })
+    .then(posts => res.json(posts))
+    .catch(err => res.status(404).json({ nopostsfound: 'No Posts found' }));
+});
+
+
+
+
       aws.config.update({
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,              
       secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET,      
@@ -81,6 +92,9 @@ router.get('/comments/:query', (req, res) => {
         secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET ,  
       })
       
+
+
+
 
 router.post('/',
 

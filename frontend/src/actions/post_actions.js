@@ -1,4 +1,4 @@
-import { getPosts, getUserPosts, writePost, changePost, destroyPost, getPost, fetchSearch, fetchCommentChildren } from '../util/post_api_util';
+import { getPosts, getUserPosts, writePost, changePost, destroyPost, getPost, fetchSearch, fetchCommentChildren, fetchTags } from '../util/post_api_util';
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
@@ -81,7 +81,7 @@ export const fetchSearchPosts = search => dispatch => (
 );
 
 export const fetchSearchTags = search => dispatch => (
-  fetchSearch(search)
+  fetchTags(search)
     .then(posts => dispatch(receivePosts(posts)))
     .catch(err => console.log(err))
 );
