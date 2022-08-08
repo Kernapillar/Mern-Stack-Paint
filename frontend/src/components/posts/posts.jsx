@@ -19,6 +19,25 @@ class Posts extends React.Component {
     this.props.fetchSearchTags(tag)
   }
 
+  postsRender () {
+    if (this.props.posts.length === 0) {
+      return (<h1>No Matching Posts</h1>) 
+    } else {
+      return (
+        <>
+          {this.props.posts.map(post => (
+          <Link to={`/posts/${post._id}`} key={`post-link-${post._id}`}>
+              <li className='post' key={`post-item-${post.id}`}> <PostSingle key={post.id} post={post} text={post.text} tag={post.tag} /></li>  
+          </Link> 
+          ))}
+        
+        </>
+      )
+    }
+    
+    
+  }
+
 
   render() {
       return (
@@ -33,11 +52,8 @@ class Posts extends React.Component {
           </div>
             <div className="post-list">
               {/* <h2>All Posts</h2> */}
-              {this.props.posts.map(post => (
-                <Link to={`/posts/${post._id}`} key={`post-link-${post._id}`}>
-                    <li className='post' key={`post-item-${post.id}`}> <PostSingle key={post.id} post={post} text={post.text} tag={post.tag} /></li>  
-                </Link> 
-              ))}
+              {this.postsRender()}
+              
             </div>
         </div>
       );

@@ -10,6 +10,14 @@
     justify-content: space-around;
 }
 
+.post-list > h1 {
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2%;
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+
 .tag-categories {
     width: 500px;
     display: flex;
