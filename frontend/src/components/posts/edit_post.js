@@ -91,6 +91,7 @@ class EditPost extends React.Component {
       <div className="new-post-container">
 
         <form onSubmit={this.handleSubmit}>
+        <div className='create-post-items'>
           <div className='canvas-drawbox'>
             {/* <CanvasComponent  /> */}
             <CanvasComponent key={this.props.postId} parentURL={window.freshurl} />
@@ -115,6 +116,7 @@ class EditPost extends React.Component {
               <input type="submit" value="Submit" className='submit-button'/>
             </div>
             {/* <PostSingle text={this.state.newPost} /> */}
+          </div>
           </div>
         </form>
         <button onClick={() => this.handleDeleteClick()} className="delete-button">Delete post</button>

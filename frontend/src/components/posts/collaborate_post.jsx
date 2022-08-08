@@ -137,6 +137,7 @@ if (!window.freshurl) { return null } else{
       <div className="new-post-container">
       {/* {this.canvasConvert()} */}
         <form onSubmit={this.handleSubmit}>
+        <div className='create-post-items'>
           <div className='canvas-drawbox'>
             {/* {console.log( "concat collaborate post", this.props.currentPost.parentUrls.concat(this.props.currentPost._id))} */}
             <CanvasComponent key={this.props.parentUrl} parentURL={window.freshurl} />
@@ -163,6 +164,7 @@ if (!window.freshurl) { return null } else{
               <input type="submit" value="Submit" className='submit-button'/>
             </div>
 
+          </div>
           </div>
         </form>
 

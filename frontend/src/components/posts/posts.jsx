@@ -34,8 +34,8 @@ class Posts extends React.Component {
             <div className="post-list">
               {/* <h2>All Posts</h2> */}
               {this.props.posts.map(post => (
-                <Link to={`/posts/${post._id}`}>
-                    <li className='post'> <PostSingle key={post.id} post={post} text={post.text} tag={post.tag} /></li>  
+                <Link to={`/posts/${post._id}`} key={`post-link-${post._id}`}>
+                    <li className='post' key={`post-item-${post.id}`}> <PostSingle key={post.id} post={post} text={post.text} tag={post.tag} /></li>  
                 </Link> 
               ))}
             </div>

@@ -6,17 +6,26 @@
     justify-content: center; */
 }
 
+.create-post-items {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, 800px);
+    grid-gap: 4rem;
+    justify-content: center;
+    /* justify-content: center;  */
+}
 .canvas-drawbox {
-    float: left;
-    width: 66%;
-    margin-left: 1%;
+    /* float: left; */
+    /* width: 66%; */
+    /* margin-left: 2rem; */
     /* overflow: hidden; */
 }
 
 .new-post-content {
-    width: 32%;
+    /* width: 32%; */
     height: 620px;
-    float: left;
+    margin-left: 10rem;
+    /* float: left; */
     overflow: hidden;
     display: flex;
     flex-direction: column;

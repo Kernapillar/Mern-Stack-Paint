@@ -10,7 +10,7 @@ class PostReplyItem extends React.Component {
         <div className='comments-wrapper'>
             <h1>{this.props.post.userName}</h1>
             <h2>
-                 <h3 className='post-card-title'>{this.props.post.title ? `${this.props.post.title}` : "Title"}</h3>
+                 <div className='post-card-title'>{this.props.post.title ? `${this.props.post.title}` : "Title"}</div>
                 <div className='canvas-medium'>
                     <img src={`${this.props.post.imageUrl}`} alt="" />
                 </div>

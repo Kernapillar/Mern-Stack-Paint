@@ -63,6 +63,12 @@ body {
     margin-left: 10%;
 }
 
+.post-card-title {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10%;
+}
+
 .main-post-container h4 {
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 10%;

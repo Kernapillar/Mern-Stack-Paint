@@ -64,31 +64,33 @@ class CreatePost extends React.Component {
       <div className="new-post-container">
 
         <form onSubmit={this.handleSubmit}>
-          <div className='canvas-drawbox'>
-            <CanvasComponent parentURL={this.props.parentURL} />
-          </div>
-
-
-          <div className='new-post-content'>
-            <input
-              value={this.state.title}
-              onChange={this.update("title")}
-              placeholder="Add a Title to your post..."
-              className='title-input' />
-            <textarea
-              value={this.state.text}
-              onChange={this.update("text")}
-              placeholder="Write your Comment..."
-            className='text-input'/>
-            <div className='tag-submit'>
-              <select onChange={this.update("tag")} className="tag-dropdown"  >
-                <option value={"person"}>Person</option>
-                <option value={"place"} >Place</option>
-                <option value={"thing"} selected>Thing</option>
-              </select>
-              <input type="submit" value="Submit" className='submit-button'/>
+          <div className='create-post-items'>
+            <div className='canvas-drawbox'>
+              <CanvasComponent parentURL={this.props.parentURL} />
             </div>
 
+
+            <div className='new-post-content'>
+              <input
+                value={this.state.title}
+                onChange={this.update("title")}
+                placeholder="Add a Title to your post..."
+                className='title-input' />
+              <textarea
+                value={this.state.text}
+                onChange={this.update("text")}
+                placeholder="Write your Comment..."
+              className='text-input'/>
+              <div className='tag-submit'>
+                <select onChange={this.update("tag")} className="tag-dropdown"  >
+                  <option value={"person"}>Person</option>
+                  <option value={"place"} >Place</option>
+                  <option value={"thing"} selected>Thing</option>
+                </select>
+                <input type="submit" value="Submit" className='submit-button'/>
+              </div>
+
+            </div>
           </div>
         </form>
 
