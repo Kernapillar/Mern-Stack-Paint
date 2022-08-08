@@ -74,7 +74,7 @@ class ShowPost extends React.Component {
                 <>
                     <h3>Comments: </h3>
                     {this.props.post.comments.map(comment => (
-                        <Link to={`/posts/${comment._id}`}>
+                        <Link to={`/posts/${comment._id}`} onClick={() => setTimeout(() => window.location.reload(), 100) } >
                             <PostReplyItem post={comment} /> 
                         </Link>
                     ))};
