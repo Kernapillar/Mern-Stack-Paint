@@ -68,6 +68,7 @@ class ShowPost extends React.Component {
     }
 
     replyPosts () {
+        if (!this.props.post.comments) {return null}
         if (this.props.post.comments.length != 0) {
             return (
                 <>

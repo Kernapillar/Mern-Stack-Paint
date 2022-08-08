@@ -22,7 +22,10 @@ class PostSingle extends React.Component {
         <hr />
         <div className='comments-tags'>
           {/* <p>x comments</p> */}
-          <h2 className="tag-placeholder">Tag: &nbsp;</h2>
+          {/* <h2 className='tag-placeholder'>Author: &nbsp;</h2> */}
+          <h2 className='username'>{this.props.post.userName} </h2>
+          &nbsp;
+          {/* <h2 className="tag-placeholder">Tag: &nbsp;</h2> */}
           <div className="tags">{this.props.tag}</div>
         </div>
       </div>
