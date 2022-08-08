@@ -110,3 +110,7 @@ body {
   width: 100px;
   height: 60px;
 }
+
+.search-bar-container > span:hover {
+  cursor: default;
+}
