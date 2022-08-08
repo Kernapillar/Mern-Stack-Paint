@@ -7,8 +7,8 @@ import Collaborate from './collaborate_post';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("collaborate post container", ownProps)
-  console.log("collaborate post container state", state)
+  // console.log("collaborate post container", ownProps)
+  // console.log("collaborate post container state", state)
   return {
     currentUser: state.session.user,
     newPost: state.posts.new,

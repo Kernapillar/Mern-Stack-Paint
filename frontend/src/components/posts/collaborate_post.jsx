@@ -8,7 +8,7 @@ import './create_posts.css';
 class Collaborate extends React.Component {
   constructor(props) {
     super(props);
-    console.log("collaborate posts", this.props )
+    // console.log("collaborate posts", this.props )
     this.state = {
       text: "",
       title: "",

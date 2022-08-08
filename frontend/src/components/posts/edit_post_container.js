@@ -4,8 +4,8 @@ import EditPost from './edit_post';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("MSTP edit post container state ", state)
-  console.log("MSTP edit post container ownProps ", ownProps)
+  // console.log("MSTP edit post container state ", state)
+  // console.log("MSTP edit post container ownProps ", ownProps)
   return {
     currentUser: state.session.user,
     currentPost: state.posts.currentPost,

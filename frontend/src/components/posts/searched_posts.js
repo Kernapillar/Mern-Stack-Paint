@@ -8,19 +8,19 @@ import "./posts.css"
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
-console.log("searched state", this.state)
-console.log("searched props",this.props)
+// console.log("searched state", this.state)
+// console.log("searched props",this.props)
   }
 
   componentDidMount() {
-    console.log("componentdidmount", this.props)
+    // console.log("componentdidmount", this.props)
     // this.props.search()
   }
 
 
   render() {
-      console.log("searched posts render", this.props)
-      console.log("searched posts render", this.state)
+      // console.log("searched posts render", this.props)
+      // console.log("searched posts render", this.state)
       if (this.props.posts === undefined || this.props.posts.length === 0) {
       return (<div>Enter your Query above
 

@@ -56,7 +56,7 @@ homereload(e){
           <Link to={'/profile'} className="link">Profile</Link>
           <Link to={'/posts/new'} className="link">Create a Post</Link> */}
           {/* <button onClick={this.logoutUser}className="logout-button">Logout</button> */}
-          {console.log(this.props)}
+          {/* {console.log(this.props)} */}
           <div className='search-bar-container'>
             <form onSubmit={this.search}> <input type="text" onChange={this.update("search")} value={this.state.search} placeholder="search" className='search-bar' />  </form>
             {/* <input type="text" onChange={this.update('search')} value={this.state.search} placeholder="search" className='search-bar' /> */}

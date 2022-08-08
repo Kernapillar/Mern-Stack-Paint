@@ -5,8 +5,8 @@ import SearchResults from './searched_posts';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    console: console.log("searchcontainer state",state), 
-    console: console.log("searchcontainer ownprops", ownProps),
+    // console: console.log("searchcontainer state",state), 
+    // console: console.log("searchcontainer ownprops", ownProps),
     ownProps: ownProps
     // posts: Object.values(state.posts.all)
   };

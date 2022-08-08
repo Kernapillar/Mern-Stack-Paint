@@ -8,15 +8,15 @@ class ShowPost extends React.Component {
        super(props)
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this)
-        console.log("show posts header", this)
+        // console.log("show posts header", this)
     }
 
 
     componentWillMount(){
         this.props.fetchPost(this.props.match.params.id)
-            .then(console.log("componentwillmount", this.props))
+            // .then(console.log("componentwillmount", this.props))
         .then(this.props.fetchComments(this.props.match.params.id))
-            .then(console.log("componentwillmount", this.props))
+            // .then(console.log("componentwillmount", this.props))
     }
 
     componentDidMount() {
@@ -24,7 +24,7 @@ class ShowPost extends React.Component {
         // this.props.fetchComments(this.props.post.currentPost._id)
         // console.log("component did mount", this.props.post.currentPost.parentUrls.concat(this.props.post.currentPost._id))
             // .then(console.log("random shit", this.props))
-            console.log("random shit", this)
+            // console.log("random shit", this)
     }
 
     handleDeleteClick() {
@@ -85,13 +85,13 @@ class ShowPost extends React.Component {
 
 
     render () {
-        console.log("this.props.post",this.props.post)
+        // console.log("this.props.post",this.props.post)
         let fetched = false;
         if (this.props.post.currentPost && !fetched){
         // this.props.fetchComments(this.props.post.currentPost.parentUrls.concat(this.props.post.currentPost._id))
         // this.props.fetchComments(this.props.post.currentPost.parentUrls)
         // fetched = true    
-        console.log("zero string",this.props.post.currentPost.parentUrls)
+        // console.log("zero string",this.props.post.currentPost.parentUrls)
         }
 
         if (!this.props.post.currentPost) {
@@ -101,8 +101,8 @@ class ShowPost extends React.Component {
             if (this.props.post.currentPost.user === this.props.currentUser) {
                 return (
                     <div className='show-post-container'>
-                        {console.log("this.props.post ID ",this.props.post.currentPost._id)}
-                        {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
+                        {/* {console.log("this.props.post ID ",this.props.post.currentPost._id)}
+                        {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)} */}
                         {this.canvasConvert()}
     
                         {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}
@@ -144,8 +144,8 @@ class ShowPost extends React.Component {
             } else {
                 return (
                     <div className='show-post-container'>
-                        {console.log("this.props.post ID ",this.props.post.currentPost._id)}
-                        {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
+                        {/* {console.log("this.props.post ID ",this.props.post.currentPost._id)}
+                        {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)} */}
                         {this.canvasConvert()}
     
                         {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}

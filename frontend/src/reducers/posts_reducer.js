@@ -3,7 +3,7 @@ import { RECEIVE_POSTS, RECEIVE_POST, RECEIVE_USER_POSTS, RECEIVE_NEW_POST, REMO
 const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-  console.log("action posts reducer", action)
+  // console.log("action posts reducer", action)
   switch (action.type) {
     case RECEIVE_POSTS:
       newState.all = action.posts.data;

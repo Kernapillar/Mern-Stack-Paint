@@ -44,7 +44,7 @@ export const fetchPosts = () => dispatch => (
 );
 
 export const fetchComments = (query) => dispatch => (
-  console.log("query data", query),
+  // console.log("query data", query),
   fetchCommentChildren(query)
     .then(posts => dispatch(receiveComments(posts)))
     .catch(err => console.log(err))

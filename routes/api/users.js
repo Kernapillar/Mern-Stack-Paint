@@ -67,7 +67,7 @@ router.post('/login', (req, res) => {
 
   User.findOne({ email })
     .then(user => {
-      console.log("routes user object line 70", user)
+      // console.log("routes user object line 70", user)
       if (!user) {
         return res.status(404).json({ email: 'This user does not exist' });
       }
@@ -76,7 +76,7 @@ router.post('/login', (req, res) => {
         .then(isMatch => {
           if (isMatch) {
             const payload = { id: user.id, name: user.handle };
-            console.log("users routes lin e79", payload)
+            // console.log("users routes lin e79", payload)
 
             jwt.sign( payload, keys.secretOrKey,
               // Tell the key to expire in one hour

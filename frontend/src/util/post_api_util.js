@@ -13,26 +13,26 @@ export const getPost = id => {
 };
 
 export const writePost = data => {
-  console.log("postapiutil",data)
+  // console.log("postapiutil",data)
   return axios.post('/api/posts/', data)
 }
   
 export const fetchSearch = query => {
-  console.log("query", query)
+  // console.log("query", query)
   return axios.get(`/api/posts/search/${query}`)
 }
 
 export const fetchTags = query => {
-  console.log("query", query)
+  // console.log("query", query)
   return axios.get(`/api/posts/tags/${query}`)
 }
 export const fetchCommentChildren = query => {
-  console.log("query", query)
+  // console.log("query", query)
   return axios.get(`/api/posts/comments/${query}`)
 }
 
 export const changePost = data => {
-  console.log("are we hitting post api util", data)
+  // console.log("are we hitting post api util", data)
   return axios.patch(`/api/posts/${data.id}`, data)
 }
 

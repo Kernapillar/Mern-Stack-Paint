@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require('passport');
 const aws = require('aws-sdk')         
-require("dotenv").config();                      // for env file
+// require("dotenv").config();                      // for env file
 
 const validatePostInput = require('../../validation/post');
 const Post = require('../../models/Post')
@@ -70,7 +70,7 @@ router.get('/comments/:query', (req, res) => {
 
 
 router.get('/', (req, res) => {
-  console.log("are we hitting here")
+  // console.log("are we hitting here")
   Post.find()
     .sort({ date: -1 })
     .then(posts => res.json(posts))
@@ -100,7 +100,7 @@ router.post('/',
 
     passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    console.log("posts routes req",req)
+    // console.log("posts routes req",req)
     const { isValid, errors } = validatePostInput(req.body);
     if (!isValid) { return res.status(400).json(errors); }
   const buffertry = req.body.blobData
@@ -131,17 +131,17 @@ const params = {
           imageUrl: data.Location
         });
         
-        console.log("posts.js line 110 post submitted object ",newPost )
-        console.log("posts.js line 111 post submitted object origin ",newPost.origin )
-        console.log("posts.js line 112 post submitted object ID ",newPost._id )
+        // console.log("posts.js line 110 post submitted object ",newPost )
+        // console.log("posts.js line 111 post submitted object origin ",newPost.origin )
+        // console.log("posts.js line 112 post submitted object ID ",newPost._id )
         // if (!newPost.origin) {newPost.origin = newPost._id}
-        console.log("posts.js line 113 post submitted object ", newPost )
-        console.log("image url for local testing until threaded",newPost.imageUrl)
+        // console.log("posts.js line 113 post submitted object ", newPost )
+        // console.log("image url for local testing until threaded",newPost.imageUrl)
         
         newPost.save().then(post => res.json(post));
-        console.log("posts.js line 117 post submitted object ",newPost )
-        console.log("posts.js line 118 post submitted object ", newPost._id )
-        console.log("posts.js line 118 post submitted object ",newPost._id )
+        // console.log("posts.js line 117 post submitted object ",newPost )
+        // console.log("posts.js line 118 post submitted object ", newPost._id )
+        // console.log("posts.js line 118 post submitted object ",newPost._id )
         
     })
   }
@@ -154,7 +154,7 @@ router.patch('/:id',
     // const { isValid, errors } = validatePostInput(req.body);
     // if (!isValid) { return res.status(400).json(errors); }
     const buffertry = req.body.blobData
-    console.log("buffertry 126 posts.js",buffertry)
+    // console.log("buffertry 126 posts.js",buffertry)
     let replaced = buffertry.replace("data:image/png;base64,", "")
     buffalo = Buffer.from(replaced, 'base64')
 

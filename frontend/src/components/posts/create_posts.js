@@ -27,7 +27,7 @@ class CreatePost extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("when do we hit nextprops",nextProps)
+    // console.log("when do we hit nextprops",nextProps)
     this.setState({ newPost: nextProps.newPost.text });
   }
   

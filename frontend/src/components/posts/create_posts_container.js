@@ -3,7 +3,7 @@ import { composePost } from '../../actions/post_actions';
 import CreatePost from './create_posts';
 
 const mapStateToProps = (state) => {
-  console.log("MSTP create post container", state)
+  // console.log("MSTP create post container", state)
   return {
     currentUser: state.session.user,
     newPost: state.posts.new
