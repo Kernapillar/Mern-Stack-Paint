@@ -56,6 +56,7 @@
     background-color: violet;
     margin: 3px;
 }
+
 .black {
     background-color: black;
     margin: 3px;
@@ -88,6 +89,14 @@
     align-content: center;
 }
 
+.pen-size-scroll:hover {
+    cursor: grab;
+}
+
+.pen-size-scroll:active {
+    cursor: grabbing;
+}
+
 .color-palette {
     display: flex;
     align-items: center;
@@ -96,4 +105,8 @@
 .color-changer {
     height: 35px;
     width: 55px;
+}
+
+.color-changer:hover {
+    cursor: pointer;
 }
