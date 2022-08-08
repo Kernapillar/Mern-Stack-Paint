@@ -97,48 +97,92 @@ class ShowPost extends React.Component {
         if (!this.props.post.currentPost) {
             return null
         } else {
-            return (
-                <div className='show-post-container'>
-                    {console.log("this.props.post ID ",this.props.post.currentPost._id)}
-                    {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
-                    {this.canvasConvert()}
-
-                    {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}
-                    {/* {console.log("text", this.props.post.currentPost.imageUrl)} */}
-                    {/* {this.getBase64ImageFromUrl(this.props.post.currentPost.imageUrl).then(result => parentUrlBlob = result, console.log("parenturlblob 89",parentUrlBlob))}  */}
-                    {/*  blocked by CORS */}
-                    
-
-
-                    <div className='main-post-wrapper'>
-                        <div className='main-post-container'>
-                            {/* <h1>Title</h1> */}
-                            <h1>{this.props.post.currentPost.title ? `${this.props.post.currentPost.title}` : "Title"}</h1>
-                            {/* <img src={`${this.props.post.imageUrl}`} alt="post-picture" className='post-card-pic'/> */}
-
-                            <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
-                            <h2>{this.props.post.currentPost.userName ? `Username: ${this.props.post.currentPost.userName}` :  `user_id: ${this.props.post.currentPost.user}` }</h2>
-                            <h4>
-                                {this.props.post.currentPost.text}
-                            </h4>
-                            <h2 className="action-buttons">
-                                <Link to={`/posts/collaborate/${this.props.post.currentPost.id}`}>
-                                    <button className="action-button">Collaborate</button>
-                                </Link>
-                                <button onClick={() => this.handleUpdate()} className="action-button">Edit Post</button>
-                                <button onClick={() => this.handleDeleteClick()} className="action-button">Delete Post</button>
-                            </h2>
-                            
+            // console.log("this.props",this.props)
+            if (this.props.post.currentPost.user === this.props.currentUser) {
+                return (
+                    <div className='show-post-container'>
+                        {console.log("this.props.post ID ",this.props.post.currentPost._id)}
+                        {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
+                        {this.canvasConvert()}
+    
+                        {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}
+                        {/* {console.log("text", this.props.post.currentPost.imageUrl)} */}
+                        {/* {this.getBase64ImageFromUrl(this.props.post.currentPost.imageUrl).then(result => parentUrlBlob = result, console.log("parenturlblob 89",parentUrlBlob))}  */}
+                        {/*  blocked by CORS */}
+                        
+    
+    
+                        <div className='main-post-wrapper'>
+                            <div className='main-post-container'>
+                                {/* <h1>Title</h1> */}
+                                <h1>{this.props.post.currentPost.title ? `${this.props.post.currentPost.title}` : "Title"}</h1>
+                                {/* <img src={`${this.props.post.imageUrl}`} alt="post-picture" className='post-card-pic'/> */}
+    
+                                <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
+                                <h2>{this.props.post.currentPost.userName ? `Username: ${this.props.post.currentPost.userName}` :  `user_id: ${this.props.post.currentPost.user}` }</h2>
+                                <h4>
+                                    {this.props.post.currentPost.text}
+                                </h4>
+                                <h2 className="action-buttons">
+                                    <Link to={`/posts/collaborate/${this.props.post.currentPost.id}`}>
+                                        <button className="action-button">Collaborate</button>
+                                    </Link>
+                                    <button onClick={() => this.handleUpdate()} className="action-button">Edit Post</button>
+                                    <button onClick={() => this.handleDeleteClick()} className="action-button">Delete Post</button>
+                                </h2>
+                                
+                            </div>
+                            {/* this.props. */}
+                            {this.replyPosts()}
                         </div>
-                        {/* this.props. */}
-                        {this.replyPosts()}
+                        {/* <div className='replies-wrapper'>
+                            <h1>Comments</h1>
+                             
+                        </div> */}
                     </div>
-                    {/* <div className='replies-wrapper'>
-                        <h1>Comments</h1>
-                         
-                    </div> */}
-                </div>
-            )
+                );
+            } else {
+                return (
+                    <div className='show-post-container'>
+                        {console.log("this.props.post ID ",this.props.post.currentPost._id)}
+                        {console.log("this.props.post parenturls",this.props.post.currentPost.parentUrls)}
+                        {this.canvasConvert()}
+    
+                        {/* {fetched = fetchImage(this.props.post.currentPost.imageUrl)} */}
+                        {/* {console.log("text", this.props.post.currentPost.imageUrl)} */}
+                        {/* {this.getBase64ImageFromUrl(this.props.post.currentPost.imageUrl).then(result => parentUrlBlob = result, console.log("parenturlblob 89",parentUrlBlob))}  */}
+                        {/*  blocked by CORS */}
+                        
+    
+    
+                        <div className='main-post-wrapper'>
+                            <div className='main-post-container'>
+                                {/* <h1>Title</h1> */}
+                                <h1>{this.props.post.currentPost.title ? `${this.props.post.currentPost.title}` : "Title"}</h1>
+                                {/* <img src={`${this.props.post.imageUrl}`} alt="post-picture" className='post-card-pic'/> */}
+    
+                                <img className='show-image' src={`${this.props.post.currentPost.imageUrl}`} alt="show picture" />
+                                <h2>{this.props.post.currentPost.userName ? `Username: ${this.props.post.currentPost.userName}` :  `user_id: ${this.props.post.currentPost.user}` }</h2>
+                                <h4>
+                                    {this.props.post.currentPost.text}
+                                </h4>
+                                <h2 className="action-buttons">
+                                    <Link to={`/posts/collaborate/${this.props.post.currentPost.id}`}>
+                                        <button className="action-button">Collaborate</button>
+                                    </Link>
+                                </h2>
+                                
+                            </div>
+                            {/* this.props. */}
+                            {this.replyPosts()}
+                        </div>
+                        {/* <div className='replies-wrapper'>
+                            <h1>Comments</h1>
+                             
+                        </div> */}
+                    </div>
+                );
+            }
         }
     }
 }
