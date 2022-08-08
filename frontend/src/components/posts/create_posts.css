@@ -71,3 +71,19 @@
 .submit-button:hover {
     background-color: #F07167;
 }
+
+
+.delete-button {
+    background-color: #FED9B7;
+    padding: 0.5rem 2rem;
+    border-radius: 0.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #F07167;
+}
