@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log("MSTP edit post container ownProps ", ownProps)
   return {
     currentUser: state.session.user,
-    // post: state.posts.user[ownProps.match.params.id],
+    currentPost: state.posts.currentPost,
     postId: ownProps.match.params.id
   };
 };

@@ -8,12 +8,18 @@ import './create_posts.css';
 class EditPost extends React.Component {
   constructor(props) {
     super(props);
-    console.log("edit post")
+    // console.log("edit post", this.props)
+    // console.log("edit post", this.props.currentPost)
+    // this.state = {
+    //   text: this.props.currentPost.text,
+    //   tag: this.props.currentPost.tag,
+    //   blobData: ""
+    // }
 
-    if (this.props.post) {
+    if (this.props.currentPost) {
         this.state = {
-          text: this.props.post.text,
-          tag: this.props.post.tag,
+          text: this.props.currentPost.text,
+          tag: this.props.currentPost.tag,
           blobData: ""
         
         }
@@ -29,22 +35,30 @@ class EditPost extends React.Component {
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
   }
 
+  // componentWillMount(){
+  //   this.props.fetchPost(this.props.postId).then( console.log("componentwillmount",this.props) )
+  //   // this.props.fetchPost(this.props.postId).then( await this.props.currentPost, console.log("componentwillmount",this.props) )
+  // }
+
   componentDidMount() {
     this.canvas = document.getElementById("canvas-page-element")
-    console.log("component mount", this.props)
-    // this.props.fetchPost(this.props.postId)
+    // console.log("component mount", this.props)
   }
+//   componentDidUpdate(nextprops){
+//     console.log("when did update fire", nextprops)
+//   }
 
 //   componentWillReceiveProps(nextProps) {
 //     console.log("when do we hit nextprops",nextProps)
-//     this.setState({ newPost: nextProps.newPost.text });
+// //     this.setState({ newPost: nextProps.newPost.text });
 //   }
   
   handleSubmit(e) {
     e.preventDefault();
-    console.log("submit start from edit post")
+    // console.log("submit start from edit post", this.props.post)
+    // console.log("submit start from edit post", this.state)
     const dataURL = this.canvas.toDataURL();
-    console.log("",dataURL)
+    // console.log("",dataURL)
     let post = {
       text: this.state.text,
       tag: this.state.tag,
@@ -72,7 +86,7 @@ class EditPost extends React.Component {
 
 
   render() {
-    console.log(this.props);
+    // console.log("line 76 this.props ",this.props);
     return (
       <div className="new-post-container">
 

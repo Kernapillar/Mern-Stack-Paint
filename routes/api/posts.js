@@ -58,8 +58,8 @@ router.get('/tags/:query', (req, res) => {
 })
 
 router.get('/comments/:query', (req, res) => {
-  console.log(req.params.query, 'this should be the query')
-  console.log(typeof req.params.query, 'this should be the query typeof')
+  // console.log(req.params.query, 'this should be the query')
+  // console.log(typeof req.params.query, 'this should be the query typeof')
 
   Post.find({ parentUrls: req.params.query })
   //I think something's going on with the array
@@ -105,7 +105,7 @@ const params = {
   
     s3.upload(params, (error, data)=> {
       if (error) { res.status(500).send({ "err": error }) }
-          console.log("posts.js line 98",req)
+          // console.log("posts.js line 98",req)
           // console.log("posts.js line 99",req.user)
           const newPost = new Post({
           parentUrls: req.body.parentUrls,
@@ -136,7 +136,7 @@ const params = {
 router.patch('/:id', 
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    console.log("posts routes req", req)
+    // console.log("posts routes req", req)
     // const { isValid, errors } = validatePostInput(req.body);
     // if (!isValid) { return res.status(400).json(errors); }
     const buffertry = req.body.blobData
@@ -155,13 +155,13 @@ router.patch('/:id',
       ContentType: "image/png"
     }
 
-    console.log("line 141 after params set on bucket")
+    // console.log("line 141 after params set on bucket")
 
     s3.upload(params, (error, data) => {
       if (error) { res.status(500).send({ "err": error }) }
-      console.log("posts.js line 142", req)
-      console.log("posts.js line 143", req.user)
-      console.log("posts.js data 144", data)
+      // console.log("posts.js line 142", req)
+      // console.log("posts.js line 143", req.user)
+      // console.log("posts.js data 144", data)
       const updatePost = ({
         //parent ID, child posts
         id: req.body.id,
@@ -197,7 +197,7 @@ router.patch('/:id',
 router.patch('/:id', 
   passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      console.log("do we hit request",req)
+      // console.log("do we hit request",req)
   Post.findByIdAndUpdate(req.params.id, req.body, 
   // Post.findByIdAndUpdate(req.params.id,req.body) , 
     (error, data) => {

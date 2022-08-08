@@ -8,7 +8,7 @@ import './create_posts.css';
 class Collaborate extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log("collaborate posts", this.props )
     this.state = {
       text: "",
       title: "",
@@ -27,12 +27,12 @@ class Collaborate extends React.Component {
 
   componentDidMount() {
     this.canvas = document.getElementById("canvas-page-element")
-    console.log("when this.componentDidMount")
+    // console.log("when this.componentDidMount")
     // console.log("canvas png", canvas.toDataURL())
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("when do we hit nextprops",nextProps)
+    // console.log("when do we hit nextprops",nextProps)
     this.setState({ newPost: nextProps.newPost.text });
   }
   
@@ -43,6 +43,7 @@ class Collaborate extends React.Component {
     let post = {
       text: this.state.text,
       title: this.state.title,
+      tag: this.props.currentPost.tag,
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
       parentUrls: this.props.currentPost._id
@@ -118,7 +119,7 @@ class Collaborate extends React.Component {
   
   render() {
     // this.fileReadImage() -- if I try to chain a .then, it doesn't fulfill becaue CORS I think
-    console.log("ParentUrl collaborate post",this.props.parentUrl)
+    // console.log("ParentUrl collaborate post",this.props.parentUrl)
     // let converted = this.canvasConvert()
 
     // let parenturl = getBase64Image(this.props.parentURL)
@@ -154,11 +155,11 @@ if (!window.freshurl) { return null } else{
               placeholder="Write your Comment..."
             className='text-input'/>
             <div className='tag-submit'>
-              <select onChange={this.update("tag")} className="tag-dropdown">
+              {/* <select onChange={this.update("tag")} className="tag-dropdown">
                 <option value={"person"}>Person</option>
                 <option value={"place"}>Place</option>
                 <option value={"thing"}>Thing</option>
-              </select>
+              </select> */}
               <input type="submit" value="Submit" className='submit-button'/>
             </div>
 

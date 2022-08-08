@@ -10,7 +10,7 @@ let loaded = false
 let count = 1
 
 function CanvasComponent(props) {
-    console.log("CANVAS Props",props)
+    // console.log("CANVAS Props",props)
     const canvasElement = useRef(null);
     const canvasContext = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -18,7 +18,7 @@ function CanvasComponent(props) {
     const [drawSize, setDrawSize] = useState(5);
 
     //see lines 46-47 for loading the image on the canvas to draw over 
-    console.log("loaded",loaded)
+    // console.log("loaded",loaded)
     const history = []
     
     
@@ -47,20 +47,20 @@ function CanvasComponent(props) {
     }
 
     if (props.parentURL ){
-        console.log("HI")
+        // console.log("HI")
         // window.img = img        
         img.onload = () => {  setTimeout(() => { canvasContext.current.drawImage(img, 0, 0)  }, 10); } 
         // // stalling for fraction of second async makes it so it doesn't glitch on loading
         // window.img.crossOrigin = "anonymous"
         // window.img.crossorigin = "anonymous"
         img.src=`${props.parentURL}`
-        console.log(`${props.parentURL}`)
+        // console.log(`${props.parentURL}`)
         // console.log("console img src",img.src=`${props.parentURL}?${count}`)
         // img.src=`${props.parentURL}?${count}`
         // console.log("console img src",img.src=`${props.parentURL}?${count}`)
 
         count += 1
-        console.log("count is rediculout", count)
+        // console.log("count is rediculout", count)
         // img.src = `https://crossorigin.me/${props.parentURL}`
 
         // loaded = true
@@ -108,10 +108,10 @@ function CanvasComponent(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(canvasElement.current.toDataURL('image/svg'))
+        // console.log(canvasElement.current.toDataURL('image/svg'))
     }
 
-    console.log("THIS IS THE CANVAS PROPS", props)
+    // console.log("THIS IS THE CANVAS PROPS", props)
     return (
         <div className="canvas-element">
             <Menu className="canvas-menu" setLineColor={setLineColor} setDrawSize={setDrawSize} clearCanvas={clearCanvas}
