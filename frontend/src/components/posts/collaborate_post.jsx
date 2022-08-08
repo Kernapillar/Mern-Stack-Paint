@@ -5,7 +5,7 @@ import { useRef } from "react";
 import './create_posts.css';
 
 
-class Colaborate extends React.Component {
+class Collaborate extends React.Component {
   constructor(props) {
     super(props);
 
@@ -171,4 +171,4 @@ if (!window.freshurl) { return null } else{
   }
 }
 
-export default Colaborate;
+export default Collaborate;

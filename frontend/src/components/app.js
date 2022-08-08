@@ -14,7 +14,7 @@ import EditPostContainer from './posts/edit_post_container';
 import ProfileContainer from "./profile/profile_container";
 import AboutUs from "./about_us/about_us";
 import SearchResultsContainer from './posts/search_container';
-import ColaborateContainer from './posts/colaborate_post_container'
+import CollaborateContainer from './posts/collaborate_post_container'
 
 const App = () => (
   <div>
@@ -23,7 +23,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/posts/new" component={CreatePostContainer} />
-      <ProtectedRoute exact path="/posts/colaborate/:id" component={ColaborateContainer} />
+      <ProtectedRoute exact path="/posts/collaborate/:id" component={CollaborateContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/posts/update/:id" component={EditPostContainer} />
       {/* <Route  path="/search" component={SearchResultsContainer} /> */}

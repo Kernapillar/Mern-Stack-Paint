@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { composePost } from '../../actions/post_actions';
-import Colaborate from './colaborate_post';
+import Collaborate from './collaborate_post';
 
 
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Colaborate);
+export default connect(mapStateToProps, mapDispatchToProps)(Collaborate);
