@@ -112,3 +112,7 @@ body {
   width: 100px;
   height: 60px;
 }
+
+.header-logo:hover {
+  cursor: pointer;
+}
