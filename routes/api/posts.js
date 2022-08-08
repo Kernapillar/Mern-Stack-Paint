@@ -35,7 +35,10 @@ router.get('/:id', (req, res) => {
 
 router.get('/search/:query', (req, res) => {
   // console.log(req.params.query, 'this should be the query')
-  Post.find({ "title": { $regex: req.params.query, $options: 'i' } })
+  Post.find({ $or: [{ "title": { $regex: req.params.query, $options: 'i' } }, {"text": { $regex: req.params.query, $options: 'i' }} ]   })
+  // Post.find({ "title": { $regex: req.params.query, $options: 'i' } })
+
+
     .then(posts => {
       res.json(posts);
     })
