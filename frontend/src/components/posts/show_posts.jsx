@@ -1,6 +1,6 @@
 import React from 'react';
 import './show_posts.css';
-import CanvasComponent from '../canvas/canvas';
+import PostReplyItem from './post_reply_item';
 import { Link } from 'react-router-dom';
  
 class ShowPost extends React.Component {
@@ -67,7 +67,20 @@ class ShowPost extends React.Component {
 
     }
 
-    
+    replyPosts () {
+        if (this.props.post.comments.length != 0) {
+            return (
+                <>
+                    <h3>Comments: </h3>
+                    {this.props.post.comments.map(comment => (
+                        <Link to={`/posts/${comment._id}`}>
+                            <PostReplyItem post={comment} /> 
+                        </Link>
+                    ))};
+                </>
+            )
+        }
+    }
 
 
     render () {
@@ -112,26 +125,7 @@ class ShowPost extends React.Component {
                             </h4>
                         </div>
                         {/* this.props. */}
-                        <h3>Comment: </h3>
-                        <div className='comments-wrapper'>
-                            <h1>username</h1>
-                            <h2>
-                                <div className='canvas-medium'>
-                                    <img src={`${this.props.post.currentPost.imageUrl}`} alt="" />
-                                </div>
-                                <div className='comment-reply'>{this.props.post.currentPost.text}</div>
-                            </h2>
-                        </div>
-
-                        <div className='comments-wrapper'>
-                            <h1>username</h1>
-                            <h2>
-                                <div className='canvas-medium'>
-                                    <img src={`${this.props.post.currentPost.imageUrl}`} alt="" />
-                                </div>
-                                <div className='comment-reply'>{this.props.post.currentPost.text}</div>
-                            </h2>
-                        </div>
+                        {this.replyPosts()}
                     </div>
                     {/* <div className='replies-wrapper'>
                         <h1>Comments</h1>
