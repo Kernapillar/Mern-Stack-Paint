@@ -103,7 +103,7 @@ class EditPost extends React.Component {
             {/* <PostSingle text={this.state.newPost} /> */}
           </div>
         </form>
-        <button onClick={() => this.handleDeleteClick()}>Delete post</button>
+        <button onClick={() => this.handleDeleteClick()} className="delete-button">Delete post</button>
       </div>
     )
   }

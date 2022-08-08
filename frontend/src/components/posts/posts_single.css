@@ -58,8 +58,14 @@
 .comments-tags {
     display: flex;
     width: 300px;
-    justify-content: space-between;
+    /* background-color: green; */
+    justify-content: center;
+    align-items: center;
 }
+
+/* .comments-tags > p {
+    background-color: orange;
+} */
 
 .post-reply-button {
     background-color: #FED9B7;
@@ -80,8 +86,24 @@
 }
 
 .tags {
-    /* background-color: grey; */
+    background-color:  lightgray;
     height: 25px;
-    width: 125px;
+    /* width: 125px; */
     color: black;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0.25rem;
+    align-items: center;
+    padding: 5px;
 }
+
+.tag-placeholder {
+    /* background-color: green; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+

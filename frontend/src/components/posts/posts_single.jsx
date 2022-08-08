@@ -21,7 +21,8 @@ class PostSingle extends React.Component {
         {/* <h3>{this.props.imageurl}</h3> */}
         <hr />
         <div className='comments-tags'>
-          <p>x comments</p>
+          {/* <p>x comments</p> */}
+          <h2 className="tag-placeholder">Tag: &nbsp;</h2>
           <div className="tags">{this.props.tag}</div>
         </div>
       </div>
