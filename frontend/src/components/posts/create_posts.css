@@ -1,13 +1,16 @@
 .new-post-container {
     padding-top: 100px;
     width: 100%;
+    /* width: 10vw; */
+    /* display: flex;
+    justify-content: center; */
 }
 
 .canvas-drawbox {
     float: left;
     width: 66%;
     margin-left: 1%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .new-post-content {
