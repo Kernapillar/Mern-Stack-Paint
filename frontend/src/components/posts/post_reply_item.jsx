@@ -8,7 +8,7 @@ class PostReplyItem extends React.Component {
     return (
 
         <div className='comments-wrapper'>
-            <h1>username</h1>
+            <h1>{this.props.post.userName}</h1>
             <h2>
                  <h3 className='post-card-title'>{this.props.post.title ? `${this.props.post.title}` : "Title"}</h3>
                 <div className='canvas-medium'>
