@@ -4,10 +4,11 @@ import ShowPost from './show_posts';
 import { withRouter } from 'react-router-dom';
  
 const mapStateToProps = (state, ownProps) => {
-    console.log("state", state)
-    console.log("ownProps", ownProps)
+    // console.log("state", state)
+    // console.log("ownProps", ownProps)
    return {
-       post: state.posts
+        post: state.posts,
+        currentUser: state.session.user.id
    }
 };
  
