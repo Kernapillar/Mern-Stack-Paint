@@ -8,26 +8,19 @@ import './create_posts.css';
 class EditPost extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("edit post", this.props)
-    // console.log("edit post", this.props.currentPost)
-    // this.state = {
-    //   text: this.props.currentPost.text,
-    //   tag: this.props.currentPost.tag,
-    //   blobData: ""
-    // }
-
     if (this.props.currentPost) {
         this.state = {
           text: this.props.currentPost.text,
           tag: this.props.currentPost.tag,
-          blobData: ""
-        
+          blobData: "",
+          errors: {}
         }
-    } else {
+      } else {
         this.state = {
-            text: '',
-            tag: '',
-            blobData: ""
+          text: '',
+          tag: '',
+          blobData: "",
+          errors: {}
         }
     }
     this.canvas = null
@@ -67,9 +60,28 @@ class EditPost extends React.Component {
       blobData:  dataURL
 
     };
+    if (this.state.text === '') {
+      this.state.errors.text = 'A comment is required to submit your post';
+    } else {
+      delete this.state.errors.text;
+    }
 
-    this.props.updatePost(post).then(() =>this.props.history.push("/profile"));;
-    // this.setState({  text: '', tag: '' });
+    if (this.state.title === '') {
+      this.state.errors.title = 'A title is required to submit your post';
+    } else {
+      delete this.state.errors.title;
+    }
+
+    this.forceUpdate();
+
+    if (!this.state.errors.text && !this.state.errors.title) {
+      this.props.updatePost(post).then(() =>this.props.history.push("/profile"));;
+      this.setState({
+        text: '',
+        tag: '',
+        title: ''
+      });
+    }
     
   }
 

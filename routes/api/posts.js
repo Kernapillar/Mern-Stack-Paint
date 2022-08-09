@@ -15,7 +15,7 @@ router.get("/test", (req, res) => {
 
 router.get('/user/:user_id', (req, res) => {
   Post.find({ user: req.params.user_id })
-    // .sort({ date: -1 })
+    .sort({ date: -1 })
 
     .then(posts => res.json(posts))
     .catch(err =>
