@@ -24,7 +24,7 @@ const HeaderDropdown = (props) => {
         <div className="dropdown-container" ref={container}>
             <button className="dropdown-button" onClick={() => setOpen(!open)}>
                 <div className="dd-button">
-                    <span className="material-symbols-outlined">menu</span>  
+                    <span className="material-symbols-outlined dropdown-icon">menu</span>  
                 </div>
             </button>
 
@@ -33,7 +33,6 @@ const HeaderDropdown = (props) => {
                     <ul>
                         <li className="dropdown-item"> <Link to={'/'}> <p className="logout-button">Home</p></Link></li>
                         <li className="dropdown-item"> <Link to={'/profile'} > <p className="logout-button">My Posts</p></Link></li>
-                        <li className="dropdown-item"> <Link to={'/about'}> <p className="logout-button">About</p></Link></li>
                         <li className="dropdown-item"> <Link to={'/posts/new'}> <p className="logout-button">Create Post</p></Link> </li>
                         <li className="dropdown-item"> <p className="logout-button" onClick={props.logout}>Logout</p> </li>
 

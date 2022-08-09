@@ -64,7 +64,10 @@ homereload(e){
             <span className="material-symbols-outlined">search</span> 
             
           </div>
-          <HeaderDropDown className="header-dropdown-button"  logout={this.logoutUser}/>
+          <div className='about-and-dropdown'>
+            <Link to={'/about'}> <p className="logout-button about">About Us</p></Link>
+            <HeaderDropDown className="header-dropdown-button"  logout={this.logoutUser}/>
+          </div>
         </div>
       );
     } else {
@@ -78,7 +81,10 @@ homereload(e){
           {/* <Link to={'/signup'}>Signup</Link>
           <br />
           <Link to={'/login'}>Login</Link> */}
-          <LoginDropdown className="header-dropdown-button" />
+          <div className='about-and-dropdown'>
+            <Link to={'/about'}> <p className="logout-button about">About Us</p></Link>
+            <LoginDropdown className="header-dropdown-button" />
+          </div>
         </div>
       );
     }
