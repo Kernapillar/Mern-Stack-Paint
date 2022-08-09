@@ -191,8 +191,8 @@ if (!window.freshurl) { return null } else{
                 <option value={"thing"}>Thing</option>
               </select> */}
               <input type="submit" value="Submit" className='submit-button'/>
-              <span className="errors">{this.renderErrors()}</span>
             </div>
+              <span className="errors">{this.renderErrors()}</span>
 
           </div>
           </div>

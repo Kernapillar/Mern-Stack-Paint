@@ -127,11 +127,11 @@ class EditPost extends React.Component {
               </select>
               <input type="submit" value="Submit" className='submit-button'/>
             </div>
+        <button onClick={() => this.handleDeleteClick()} className="delete-button">Delete post</button>
             {/* <PostSingle text={this.state.newPost} /> */}
           </div>
           </div>
         </form>
-        <button onClick={() => this.handleDeleteClick()} className="delete-button">Delete post</button>
       </div>
     )
   }
