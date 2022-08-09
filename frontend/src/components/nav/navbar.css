@@ -56,13 +56,13 @@ body {
   justify-content: center;
   background-color: white;
   border-radius: 4px;
-  width: 75%;
+  width: 100%;
 }
 
 .search-bar {
   /* background-color: green; */
   /* width: 400px; */
-  width: 30vw;
+  width: 25vw;
   font-size: 20px;
   letter-spacing: 1px;
 }
@@ -128,7 +128,7 @@ body {
 
 .about-and-dropdown {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   width: 500px;
 }
