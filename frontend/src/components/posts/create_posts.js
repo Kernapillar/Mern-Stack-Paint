@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import PostSingle from './posts_single';
 import CanvasComponent from '../canvas/canvas'
 import { useRef } from "react";
@@ -15,7 +15,7 @@ class CreatePost extends React.Component {
       tag: '',
       newPost: ""
     }
-
+    this.state.errors = {};
     this.canvas = null
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -42,13 +42,29 @@ class CreatePost extends React.Component {
       blobData:  dataURL,
       fileNum: `${Date.now()}`,
     };
+    
+    if (this.state.text === '') {
+      this.state.errors.text = 'A comment is required to submit your post';
+    } else {
+      delete this.state.errors.text;
+    }
 
-    this.props.composePost(post).then(() =>this.props.history.push("/"));;
-    this.setState({ 
-      text: '',
-      tag: '',
-      title: ''
-    });
+    if (this.state.title === '') {
+      this.state.errors.title = 'A title is required to submit your post';
+    } else {
+      delete this.state.errors.title;
+    }
+
+    this.forceUpdate();
+
+    if (!this.state.errors.text && !this.state.errors.title) {
+      this.props.composePost(post).then(() =>this.props.history.push("/"));;
+      this.setState({ 
+        text: '',
+        tag: '',
+        title: ''
+      });
+    }
     
   }
 
@@ -56,6 +72,19 @@ class CreatePost extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        <li key="error-1">
+          {this.state.errors.title}
+        </li>
+        <li key="error-2">
+          {this.state.errors.text}
+        </li>
+      </ul>
+    )
   }
 
 
@@ -88,8 +117,8 @@ class CreatePost extends React.Component {
                   <option value={"thing"} selected>Thing</option>
                 </select>
                 <input type="submit" value="Submit" className='submit-button'/>
+                <span className="errors">{this.renderErrors()}</span>
               </div>
-
             </div>
           </div>
         </form>

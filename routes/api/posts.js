@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require('passport');
 const aws = require('aws-sdk')         
-// require("dotenv").config();                      // for env file
+require("dotenv").config();                      // for env file
 
 const validatePostInput = require('../../validation/post');
 const Post = require('../../models/Post')

@@ -15,7 +15,7 @@ class Collaborate extends React.Component {
       tag: '',
       newPost: ""
     }
-
+    this.state.errors = {};
     this.canvas = null
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -49,12 +49,28 @@ class Collaborate extends React.Component {
       parentUrls: this.props.currentPost._id
     };
 
-    this.props.composePost(post).then(() =>this.props.history.push("/"));;
-    this.setState({ 
-      text: '',
-      tag: '',
-      title: ''
-    });
+    if (this.state.text === '') {
+      this.state.errors.text = 'A comment is required to submit your post';
+    } else {
+      delete this.state.errors.text;
+    }
+
+    if (this.state.title === '') {
+      this.state.errors.title = 'A title is required to submit your post';
+    } else {
+      delete this.state.errors.title;
+    }
+
+    this.forceUpdate();
+
+    if (!this.state.errors.text && !this.state.errors.title) {
+      this.props.composePost(post).then(() =>this.props.history.push("/"));;
+      this.setState({ 
+        text: '',
+        tag: '',
+        title: ''
+      });
+    }
     
   }
 
@@ -62,6 +78,19 @@ class Collaborate extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        <li key="error-1">
+          {this.state.errors.title}
+        </li>
+        <li key="error-2">
+          {this.state.errors.text}
+        </li>
+      </ul>
+    )
   }
 
   // fetchImage = async () => {
@@ -162,6 +191,7 @@ if (!window.freshurl) { return null } else{
                 <option value={"thing"}>Thing</option>
               </select> */}
               <input type="submit" value="Submit" className='submit-button'/>
+              <span className="errors">{this.renderErrors()}</span>
             </div>
 
           </div>
