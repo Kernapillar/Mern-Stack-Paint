@@ -1,5 +1,7 @@
 # Mern-Stack-Paint
 
+![mern_stack_paint](https://user-images.githubusercontent.com/103587019/185811997-36dd8d74-7496-4c33-9e8b-fb2d0310cd08.jpg)
+
 ## Live Link
 * Click here to view the project hosted on heroku: https://mern-stack-paint.herokuapp.com/#/
 
