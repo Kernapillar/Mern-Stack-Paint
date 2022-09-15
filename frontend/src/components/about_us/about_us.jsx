@@ -30,7 +30,7 @@ const AboutUs = () => {
                             </a>
                         </div>
                     </li>
-                    <li>Cindy Vuong (Frontend)
+                    <li>Cindy Vuong (Frontend Lead)
                         <div className='icons'>
                             <a href="https://github.com/vuongcindy/" target=">blank">
                                 <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-alt-1024.png" id="github" alt="link to Cindy's Github" />
